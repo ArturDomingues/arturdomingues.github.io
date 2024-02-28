@@ -41,5 +41,5 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 
 ### Donations
 
-[https://www.paypal.com/donate/?business=DZ8W87A7EMKQU&no_recurring=0&item_name=Hello%2C+I%E2%80%99m+a+physicist+trying+to+pay+some+bills+while+doing+my+research%2C+any+support+would+help+me+a+lot&currency_code=BRL](Paypal)
+[Paypal](https://www.paypal.com/donate/?business=DZ8W87A7EMKQU&no_recurring=0&item_name=Hello%2C+I%E2%80%99m+a+physicist+trying+to+pay+some+bills+while+doing+my+research%2C+any+support+would+help+me+a+lot&currency_code=BRL)
 
