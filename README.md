@@ -44,5 +44,3 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
   
 [![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/ArturDomingues)
 
-![GitHub Sponsor](https://img.shields.io/github/sponsors/ArturDomingues?label=Sponsor&logo=GitHub)
-
