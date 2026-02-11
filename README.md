@@ -19,18 +19,18 @@ My work explores:
 
 ### MSc Dissertation
 
-**Simulations of NV color centers dynamics using QuTiP**  
+**Simulations of NV Color Centers Dynamics Using QuTiP**  
 University of São Paulo (USP), 2025.  
 
 Full text available at:  
-https://www.teses.usp.br/teses/disponiveis/76/76134/tde-25112025-095217/pt-br.php
+[USP Thesis Repository](https://www.teses.usp.br/teses/disponiveis/76/76134/tde-25112025-095217/pt-br.php)
 
 ---
 
 ### Research Code
 
 **NV Optical Simulation – Dynamic Baseline (MSc Project Repository)**  
-https://github.com/ArturDomingues/nv-optical-sim-dyn-baseline  
+[GitHub Repository](https://github.com/ArturDomingues/nv-optical-sim-dyn-baseline)
 
 This repository contains the simulation framework developed during my master's research. The codebase is currently being refactored and reorganized for clarity, modularity, and reproducibility. A structured and documented version will be released in the coming months.
 
@@ -39,7 +39,8 @@ This repository contains the simulation framework developed during my master's r
 ### Ongoing Contribution
 
 **QuaCCAToo – Quantum Control and Characterization Toolkit**  
-https://github.com/QISS-HZB/QuaCCAToo  
+[QuaCCAToo on GitHub](https://github.com/QISS-HZB/QuaCCAToo)
+[QuaCCAToo Page](https://qiss-hzb.github.io/QuaCCAToo/index.html)
 
 Current focus: implementation and integration of the optical dynamics module for NV center simulations within the QuaCCAToo framework.
 
@@ -47,12 +48,13 @@ Current focus: implementation and integration of the optical dynamics module for
 
 ## Contact
 
-- Email: artur_venturelli@outlook.com  
-- GitHub: https://github.com/ArturDomingues  
-- LinkedIn: https://www.linkedin.com/in/artur-venturelli-domingues-a39963122
+- Email: [artur_venturelli@outlook.com](mailto:artur_venturelli@outlook.com)  
+- GitHub: [github.com/ArturDomingues](https://github.com/ArturDomingues)  
+- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/artur-venturelli-domingues-a39963122)
 
 ---
 
 ## Disclaimer
 
 This website is currently under construction. Content, documentation, and project structure are being actively updated.
+
