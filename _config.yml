@@ -1,1 +1,37 @@
+# --- Site identity ---
+title: "Artur Domingues"
+description: "Physics Researcher in Quantum Control and Quantum Machine Learning"
+url: "https://arturdomingues.github.io"
+baseurl: ""   # leave empty for user site
+
+# --- Theme ---
 theme: jekyll-theme-leap-day
+
+# --- Author ---
+author:
+  name: "Artur Domingues"
+  email: "artur_venturelli@outlook.com"
+
+# --- Markdown & Math ---
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+# --- Plugins (GitHub Pages supported only) ---
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# --- Defaults ---
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# --- Exclude from build ---
+exclude:
+  - README.md
+  - LICENSE
