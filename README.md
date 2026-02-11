@@ -1,46 +1,58 @@
-# Artur Domingues - Physics Researcher on Quantum ML
-## Welcome to GitHub Pages
+# Artur Domingues  
+## Physics Researcher in Quantum Control and Machine Learning  
 
-You can use the [editor on GitHub](https://github.com/ArturDomingues/arturdomingues.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+---
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Bio
 
-### New section
-blabla bla
-### Markdown
+I am a physicist with a BSc and MSc in Theoretical and Experimental Physics from IFSC–USP. My research focuses on quantum control of solid-state spin systems, particularly NV centers in diamond, integrating optimal control theory, numerical simulation, and machine learning techniques.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+My work explores:
+- Optimal control of open quantum systems  
+- Machine learning strategies for quantum technologies  
+- Simulation of NV center spin dynamics  
+- Thermodynamic aspects of quantum mechanics  
 
-```markdown
-Syntax highlighted code block
+---
 
-# Header 1
-## Header 2
-### Header 3
+## Works
 
-- Bulleted
-- List
+### MSc Dissertation
 
-1. Numbered
-2. List
+**Simulations of NV color centers dynamics using QuTiP**  
+University of São Paulo (USP), 2025.  
 
-**Bold** and _Italic_ and `Code` text
+Full text available at:  
+https://www.teses.usp.br/teses/disponiveis/76/76134/tde-25112025-095217/pt-br.php
 
-[Link](url) and ![Image](src)
-```
+---
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### Research Code
 
-### Jekyll Themes
+**NV Optical Simulation – Dynamic Baseline (MSc Project Repository)**  
+https://github.com/ArturDomingues/nv-optical-sim-dyn-baseline  
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ArturDomingues/arturdomingues.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+This repository contains the simulation framework developed during my master's research. The codebase is currently being refactored and reorganized for clarity, modularity, and reproducibility. A structured and documented version will be released in the coming months.
 
-### Support or Contact
+---
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Ongoing Contribution
 
-### Donations
-[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://www.paypal.com/donate/?business=DZ8W87A7EMKQU&no_recurring=0&item_name=Hello%2C+I%E2%80%99m+a+physicist+trying+to+pay+some+bills+while+doing+my+research%2C+any+support+would+help+me+a+lot&currency_code=BRL)
-  
-[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/ArturDomingues)
+**QuaCCAToo – Quantum Control and Characterization Toolkit**  
+https://github.com/QISS-HZB/QuaCCAToo  
 
+Current focus: implementation and integration of the optical dynamics module for NV center simulations within the QuaCCAToo framework.
+
+---
+
+## Contact
+
+- Email: artur_venturelli@outlook.com  
+- GitHub: https://github.com/ArturDomingues  
+- LinkedIn: https://www.linkedin.com/in/artur-venturelli-domingues-a39963122
+
+---
+
+## Disclaimer
+
+This website is currently under construction. Content, documentation, and project structure are being actively updated.
