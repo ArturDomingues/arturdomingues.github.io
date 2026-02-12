@@ -82,23 +82,59 @@ hr {
   opacity: 0.5;
 }
 
-/* Header/wrapper styling for leap-day theme */
+/* Header/wrapper styling for merlot theme */
 header {
   background-color: var(--bg-secondary) !important;
-  border-bottom: 1px solid var(--border-color) !important;
 }
 
-#header {
-  background-color: var(--bg-secondary) !important;
-  border-bottom: 1px solid var(--border-color) !important;
-}
-
-.wrapper {
+.shell {
   background-color: var(--bg-primary) !important;
+}
+
+.ribbon-outer {
+  background-color: var(--bg-secondary) !important;
+}
+
+.ribbon-inner {
+  background-color: var(--bg-secondary) !important;
+}
+
+#main_content {
+  background-color: var(--bg-primary) !important;
+}
+
+#forkme_banner {
+  background-color: var(--accent-purple) !important;
+  color: var(--text-primary) !important;
+}
+
+#forkme_banner:hover {
+  background-color: var(--accent-blue) !important;
 }
 
 section {
   background-color: var(--bg-primary) !important;
+}
+
+footer {
+  background-color: var(--bg-secondary) !important;
+}
+
+.ribbon-outer .left-tail,
+.ribbon-outer .right-tail {
+  border-color: var(--bg-secondary) !important;
+}
+
+#downloads {
+  background-color: var(--bg-secondary) !important;
+}
+
+#no-downloads {
+  background-color: var(--bg-secondary) !important;
+}
+
+.octocat {
+  opacity: 0.5;
 }
 
 /* Theme Toggle Button */

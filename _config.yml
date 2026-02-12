@@ -5,7 +5,7 @@ url: "https://arturdomingues.github.io"
 baseurl: ""   # leave empty for user site
 
 # --- Theme ---
-theme: jekyll-theme-leap-day
+theme: jekyll-theme-merlot
 
 # --- Author ---
 author:

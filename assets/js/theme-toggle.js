@@ -1,16 +1,16 @@
 // Theme Toggle Functionality
 (function() {
-  // Get theme from localStorage or default to light
+  // Get theme from localStorage or default to dark
   const getTheme = () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       return savedTheme;
     }
     // Check system preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      return 'light';
     }
-    return 'light';
+    return 'dark'; // Default to dark mode
   };
 
   // Apply theme to document
