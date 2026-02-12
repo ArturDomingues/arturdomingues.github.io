@@ -29,8 +29,11 @@
     const toggleBtn = document.getElementById('theme-toggle');
     if (toggleBtn) {
       // Use sun for light mode, moon for dark mode
-      toggleBtn.innerHTML = theme === 'dark' ? '☀️' : '🌙';
-      toggleBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      const icon = theme === 'dark' ? '☀️' : '🌙';
+      const label = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+      toggleBtn.innerHTML = `<span aria-hidden="true">${icon}</span><span class="sr-only">${label}</span>`;
+      toggleBtn.setAttribute('aria-label', label);
+      toggleBtn.setAttribute('title', label);
     }
   };
 
