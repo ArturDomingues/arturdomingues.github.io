@@ -223,14 +223,12 @@ th {
   color: var(--accent-blue) !important;
   border: 1px solid var(--border-color) !important;
   padding: 8px;
-  border-color: var(--border-color) !important;
 }
 
 td {
   border: 1px solid var(--border-color) !important;
   padding: 8px;
   color: var(--text-primary) !important;
-  border-color: var(--border-color) !important;
 }
 
 tr:nth-child(even) {
@@ -318,12 +316,7 @@ dt {
 
 /* Ensure all container backgrounds are themed */
 div, section, article, aside, nav, main {
-  background-color: transparent;
-}
-
-/* Override any inline styles or default backgrounds */
-* {
-  border-color: var(--border-color);
+  background-color: transparent !important;
 }
 
 /* Specifically target elements that might have hardcoded colors */
