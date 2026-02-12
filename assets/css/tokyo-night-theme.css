@@ -118,6 +118,7 @@ section {
 
 footer {
   background-color: var(--bg-secondary) !important;
+  background-image: none !important;
 }
 
 .ribbon-outer .left-tail,
@@ -214,6 +215,7 @@ blockquote {
 table {
   border-collapse: collapse;
   background-color: var(--bg-primary) !important;
+  border-bottom: 2px solid var(--border-color) !important;
 }
 
 th {
@@ -231,4 +233,96 @@ td {
 
 tr:nth-child(even) {
   background-color: var(--bg-secondary) !important;
+}
+
+/* Override Merlot theme specific element backgrounds */
+ul li {
+  background: transparent !important;
+}
+
+/* Images - override Merlot theme borders and shadows */
+img {
+  border: 2px solid var(--border-color) !important;
+  box-shadow: 0px 2px 0px var(--border-color) !important;
+  -webkit-box-shadow: 0px 2px 0px var(--border-color) !important;
+  -moz-box-shadow: 0px 2px 0px var(--border-color) !important;
+}
+
+/* Override any remaining white/gray backgrounds from Merlot */
+.shell, .wrapper {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Ribbon tails border colors */
+header span.left-tail, 
+header span.right-tail,
+footer span.left-tail, 
+footer span.right-tail {
+  border-color: transparent !important;
+}
+
+/* Header ribbon colors */
+header span.ribbon-inner,
+header span.ribbon-outer {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+header h1, header h2 {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Footer ribbon colors */
+footer span.ribbon-outer {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+footer span.ribbon-inner {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+footer span.ribbon-inner p {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-secondary) !important;
+}
+
+/* Download section backgrounds */
+section#downloads,
+div#no-downloads {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+div#no-downloads span.inner {
+  background-image: none !important;
+}
+
+/* Banner fix */
+span.banner-fix {
+  background-image: none !important;
+}
+
+/* Definition lists */
+dl, dt, dd {
+  color: var(--text-primary) !important;
+}
+
+dt {
+  color: var(--accent-blue) !important;
+}
+
+/* Ensure all container backgrounds are themed */
+div, section, article, aside, nav, main {
+  background-color: transparent !important;
+}
+
+/* Specifically target elements that might have hardcoded colors */
+.wrapper, 
+.container,
+#wrapper,
+#container {
+  background-color: var(--bg-primary) !important;
 }
