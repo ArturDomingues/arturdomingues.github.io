@@ -16,21 +16,16 @@
 - `site/` — generated output (ignored).
 
 ## 3. Local development
-1. Create a virtual environment:
+1. Create a virtual environment and install Zensical using pyproject.toml:
    ```bash
    uv init
-   uv venv
    ```
-2. Install Zensical:
-   ```bash
-   uv pip install zensical
-   ```
-3. Live preview:
+2. Live preview:
    ```bash
    uv run zensical serve
    ```
    Serves the docs with hot reload.
-4. Production build:
+3. Production build:
    ```bash
    uv run zensical build --clean
    ```
