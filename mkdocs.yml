@@ -1,5 +1,6 @@
 site_name: Artur Domingues
 site_url: https://arturdomingues.github.io
+docs_dir: doc
 theme:
   name: material
   palette:
