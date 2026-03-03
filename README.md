@@ -50,6 +50,8 @@
 - Zensical publishing: https://zensical.org/docs/get-started/#publish
 - GitHub Pages: https://docs.github.com/en/pages
 
+> Note: If Zensical reorganizes documentation URLs, start from https://zensical.org/docs/ and follow the navigation for setup/authoring/publishing.
+
 ## 6. Deployment notes
 - Every push to `main` or `master` runs `.github/workflows/docs.yml`.
 - The workflow installs Zensical, runs `zensical build --clean`, uploads `site/`, and deploys to GitHub Pages.

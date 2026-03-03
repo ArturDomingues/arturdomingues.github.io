@@ -13,7 +13,7 @@
   --tnl-violet: #5a3e8e;
   --tnl-navy: #343b58;
   --tnl-slate: #40434f;
-  --tnl-indigo: #343B58;
+  --tnl-indigo: #343b58;
   --tnl-muted: #6c6e75;
   --tnl-surface: #e6e7ed;
   --tnl-foreground: #40434f;
@@ -44,7 +44,7 @@
 [data-md-color-scheme="tokyo-night-light"] .md-nav,
 [data-md-color-scheme="tokyo-night-light"] .md-sidebar,
 [data-md-color-scheme="tokyo-night-light"] .md-nav__title {
-  background-color: var(--tnl-indigo);
+  background-color: var(--tnl-azure);
   color: var(--tnl-surface);
 }
 

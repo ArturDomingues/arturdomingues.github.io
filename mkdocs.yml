@@ -19,7 +19,7 @@ theme:
       scheme: tokyo-night-dark
       toggle:
         icon: lucide/moon
-        name: Switch to light mode
+        name: Switch to system preference
   language: en
 extra_css:
   - stylesheets/tokyo-night.css
