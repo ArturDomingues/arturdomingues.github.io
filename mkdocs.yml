@@ -1,6 +1,8 @@
 site_name: Artur Domingues
 docs_dir: docs
 theme:
+  icon:
+    repo: fontawesome/brands/github
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
