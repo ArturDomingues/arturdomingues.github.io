@@ -1,0 +1,393 @@
+:root,
+[data-md-color-scheme="tokyo-night-light"] {
+  /* Tokyo Night Light palette */
+  --tnl-red: #8c4351;
+  --tnl-orange: #965027;
+  --tnl-amber: #8f5e15;
+  --tnl-brown: #634f30;
+  --tnl-green: #385f0d;
+  --tnl-teal: #33635c;
+  --tnl-cyan: #006c86;
+  --tnl-azure: #0f4b6e;
+  --tnl-blue: #2959aa;
+  --tnl-violet: #5a3e8e;
+  --tnl-navy: #343b58;
+  --tnl-slate: #40434f;
+  --tnl-indigo: #343b58;
+  --tnl-muted: #6c6e75;
+  --tnl-surface: #e6e7ed;
+  --tnl-foreground: #40434f;
+
+  color: var(--tnl-navy);
+  background-color: var(--tnl-surface);
+}
+
+[data-md-color-scheme="tokyo-night-light"] body,
+[data-md-color-scheme="tokyo-night-light"] .md-container {
+  background-color: var(--tnl-surface);
+  color: var(--tnl-navy);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-header,
+[data-md-color-scheme="tokyo-night-light"] .md-tabs {
+  background-color: var(--tnl-azure);
+  border-bottom: 1px solid var(--tnl-foreground);
+  color: var(--tnl-surface);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-header__button,
+[data-md-color-scheme="tokyo-night-light"] .md-header__title,
+[data-md-color-scheme="tokyo-night-light"] .md-tabs__link {
+  color: var(--tnl-surface);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-nav,
+[data-md-color-scheme="tokyo-night-light"] .md-sidebar,
+[data-md-color-scheme="tokyo-night-light"] .md-nav__title {
+  background-color: var(--tnl-azure);
+  color: var(--tnl-surface);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-nav__link {
+  color: var(--tnl-surface);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-nav__link:hover,
+[data-md-color-scheme="tokyo-night-light"] .md-nav__link--active {
+  color: var(--tnl-blue);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-content {
+  background-color: var(--tnl-surface);
+  color: var(--tnl-navy);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset h1,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset h2,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset h3,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset h4 {
+  color: var(--tnl-violet);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset a {
+  color: var(--tnl-cyan);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset a:hover {
+  color: var(--tnl-blue);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset code {
+  color: var(--tnl-red);
+  background-color: var(--tnl-surface);
+  border: 1px solid var(--tnl-brown);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset pre code {
+  background-color: var(--tnl-navy);
+  color: var(--tnl-surface);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset pre {
+  background: var(--tnl-navy);
+  border: 1px solid var(--tnl-indigo);
+}
+
+[data-md-color-scheme="tokyo-night-light"] ::selection {
+  background: var(--tnl-amber);
+  color: var(--tnl-surface);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-footer {
+  background-color: var(--tnl-slate);
+  color: var(--tnl-surface);
+  border-top: 1px solid var(--tnl-foreground);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset blockquote {
+  border-left: 4px solid var(--tnl-green);
+  color: var(--tnl-muted);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset table {
+  border-color: var(--tnl-blue);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset table th {
+  background: var(--tnl-indigo);
+  color: var(--tnl-surface);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset table td {
+  border-color: var(--tnl-blue);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset details {
+  border-color: var(--tnl-teal);
+  background: var(--tnl-surface);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition-title {
+  color: var(--tnl-orange);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .md-typeset__table {
+  background: var(--tnl-surface);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-search__input {
+  background: var(--tnl-surface);
+  border: 1px solid var(--tnl-muted);
+  color: var(--tnl-navy);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-search__input:hover {
+  border-color: var(--tnl-blue);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] {
+  /* Tokyo Night Dark palette */
+  --tnd-red: #f7768e;
+  --tnd-orange: #ff9e64;
+  --tnd-amber: #e0af68;
+  --tnd-green: #9ece6a;
+  --tnd-teal: #73dacb;
+  --tnd-mint: #b4f9f8;
+  --tnd-cyan: #2ac3de;
+  --tnd-sky: #7dcfff;
+  --tnd-blue: #7aa2f7;
+  --tnd-violet: #bb9af7;
+  --tnd-soft: #c0caf5;
+  --tnd-text: #a9b1d6;
+  --tnd-muted: #9aa5ce;
+  --tnd-border: #565f89;
+  --tnd-surface: #414868;
+  --tnd-background: #1a1b26;
+
+  color: var(--tnd-text);
+  background-color: var(--tnd-background);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] body,
+[data-md-color-scheme="tokyo-night-dark"] .md-container {
+  background: var(--tnd-background);
+  color: var(--tnd-soft);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-header,
+[data-md-color-scheme="tokyo-night-dark"] .md-tabs {
+  background: var(--tnd-surface);
+  border-bottom: 1px solid var(--tnd-border);
+  color: var(--tnd-soft);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-header__title,
+[data-md-color-scheme="tokyo-night-dark"] .md-header__button,
+[data-md-color-scheme="tokyo-night-dark"] .md-tabs__link {
+  color: var(--tnd-soft);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-nav,
+[data-md-color-scheme="tokyo-night-dark"] .md-sidebar,
+[data-md-color-scheme="tokyo-night-dark"] .md-nav__title {
+  background: var(--tnd-surface);
+  color: var(--tnd-soft);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-nav__link {
+  color: var(--tnd-soft);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-nav__link:hover,
+[data-md-color-scheme="tokyo-night-dark"] .md-nav__link--active {
+  color: var(--tnd-sky);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-content {
+  background: var(--tnd-background);
+  color: var(--tnd-soft);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset h1,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset h2,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset h3,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset h4 {
+  color: var(--tnd-violet);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset a {
+  color: var(--tnd-sky);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset a:hover {
+  color: var(--tnd-blue);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset code {
+  color: var(--tnd-red);
+  background-color: var(--tnd-background);
+  border: 1px solid var(--tnd-border);
+  box-shadow: 0 0 0 1px var(--tnd-green) inset;
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset pre code {
+  background: var(--tnd-surface);
+  color: var(--tnd-soft);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset pre {
+  background: var(--tnd-surface);
+  border: 1px solid var(--tnd-border);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] ::selection {
+  background: var(--tnd-amber);
+  color: var(--tnd-background);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-footer {
+  background: var(--tnd-surface);
+  color: var(--tnd-soft);
+  border-top: 1px solid var(--tnd-border);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset blockquote {
+  border-left: 4px solid var(--tnd-teal);
+  color: var(--tnd-muted);
+  background: var(--tnd-surface);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset table {
+  border-color: var(--tnd-border);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset table th {
+  background: var(--tnd-surface);
+  color: var(--tnd-soft);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset table td {
+  border-color: var(--tnd-border);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset details {
+  border-color: var(--tnd-cyan);
+  background: var(--tnd-background);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition-title {
+  color: var(--tnd-orange);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-search__input {
+  background: var(--tnd-surface);
+  border: 1px solid var(--tnd-border);
+  color: var(--tnd-soft);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-search__input:hover {
+  border-color: var(--tnd-cyan);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-search__input:focus {
+  border-color: var(--tnd-mint);
+}
+
+/* Syntax highlighting */
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .k,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .kc,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .kd,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .kn {
+  color: var(--tnl-blue);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .s,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .sa,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .sb,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .sc {
+  color: var(--tnl-orange);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .m,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .mb,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .mf,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .mh,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .mi {
+  color: var(--tnl-amber);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .nc,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .nn,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .nt,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .ne {
+  color: var(--tnl-violet);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .nf,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .fm {
+  color: var(--tnl-cyan);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .c,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .cm,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .cp {
+  color: var(--tnl-muted);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .o,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .ow {
+  color: var(--tnl-brown);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .k,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .kc,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .kd,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .kn {
+  color: var(--tnd-blue);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .s,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .sa,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .sb,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .sc {
+  color: var(--tnd-orange);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .m,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .mb,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .mf,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .mh,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .mi {
+  color: var(--tnd-amber);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .nc,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .nn,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .nt,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .ne {
+  color: var(--tnd-violet);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .nf,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .fm {
+  color: var(--tnd-cyan);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .c,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .cm,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .cp {
+  color: var(--tnd-muted);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .o,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .ow {
+  color: var(--tnd-border);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .kc,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .no,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .bp {
+  color: var(--tnd-soft);
+}
