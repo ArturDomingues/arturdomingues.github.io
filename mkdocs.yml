@@ -6,26 +6,23 @@ theme:
   icon:
     repo: fontawesome/brands/github
   palette:
-    # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
         icon: lucide/sun-moon
         name: Switch to light mode
-
-    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      scheme: default
+      scheme: tokyo-night-light
       toggle:
         icon: lucide/sun
         name: Switch to dark mode
-
-    # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+      scheme: tokyo-night-dark
       toggle:
         icon: lucide/moon
-        name: Switch to system preference
+        name: Switch to light mode
   language: en
+extra_css:
+  - stylesheets/tokyo-night.css
 use_directory_urls: false
 nav:
   - Home: index.md
