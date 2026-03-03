@@ -18,21 +18,21 @@
 ## 3. Local development
 1. Create a virtual environment:
    ```bash
-   python -m venv .venv
-   source .venv/bin/activate
+   uv init
+   uv venv
    ```
 2. Install Zensical:
    ```bash
-   pip install zensical
+   uv pip install zensical
    ```
 3. Live preview:
    ```bash
-   zensical serve
+   uv run zensical serve
    ```
    Serves the docs with hot reload.
 4. Production build:
    ```bash
-   zensical build --clean
+   uv run zensical build --clean
    ```
    Cleans any previous build and writes the static site to `site/`.
 
