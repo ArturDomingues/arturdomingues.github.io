@@ -1,0 +1,7 @@
+[project]
+name = "arturdomingues-github-io"
+version = "0.1.0"
+description = "Local build"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ['zensical']

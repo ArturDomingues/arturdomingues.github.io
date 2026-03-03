@@ -17,8 +17,11 @@ bin-release/
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
 
-# Jekyll build artifacts
-_site/
-.jekyll-cache/
-.jekyll-metadata
+# Zensical build artifacts
 site/
+.cache/
+vendor/
+
+# local build
+.venv/
+uv.lock
