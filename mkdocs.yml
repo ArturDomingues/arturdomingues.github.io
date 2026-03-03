@@ -1,6 +1,7 @@
 site_name: My personal page
 docs_dir: docs
-#repo_url: https://github.com/ArturDomingues/arturdomingues.github.io
+repo_url: https://github.com/ArturDomingues/arturdomingues.github.io
+site_url: https://arturdomingues.github.io
 theme:
   icon:
     repo: fontawesome/brands/github
@@ -8,21 +9,21 @@ theme:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
-        icon: lucid/sun-moon
+        icon: lucide/sun-moon
         name: Switch to light mode
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
-        icon: lucid/sun
+        icon: lucide/sun
         name: Switch to dark mode
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
-        icon: lucid/moon
+        icon: lucide/moon
         name: Switch to system preference
   name: material
   language: en
