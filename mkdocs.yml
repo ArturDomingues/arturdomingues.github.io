@@ -35,7 +35,7 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   # Grids
-  - attr-list
+  - attr_list
   - md_in_html
   # Icons and Emojis (icons need to be addded in features)
   - pymdownx.emoji:
