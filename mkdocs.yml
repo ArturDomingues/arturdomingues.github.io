@@ -2,9 +2,73 @@ site_name: My personal page
 docs_dir: docs
 repo_url: https://github.com/ArturDomingues/arturdomingues.github.io
 site_url: https://arturdomingues.github.io
+markdown_extensions:
+  # Highlight blocks
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format:
+            !!python/name:pymdownx.superfences.fence_code_format # Code blocks
+
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  # Tabs
+  - pymdownx.tabbed:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {}
+  # Lists with checkboxes
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  # Tables
+  - tables
+  # Formatting
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  # Grids
+  - attr-list
+  - md_in_html
+  # Icons and Emojis (icons need to be addded in features)
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg # Images
+
+  - pymdownx.blocks.caption
+  # Math
+  - pymdownx.arithmatex:
+      generic: true
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 theme:
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
   icon:
     repo: fontawesome/brands/github
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
