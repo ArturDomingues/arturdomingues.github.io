@@ -11,8 +11,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format:
-            !!python/name:pymdownx.superfences.fence_code_format # Code blocks
-
+            !!python/name:pymdownx.superfences.fence_code_format 
+  # Code blocks
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -40,8 +40,8 @@ markdown_extensions:
   # Icons and Emojis (icons need to be addded in features)
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg # Images
-
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg 
+  # Images
   - pymdownx.blocks.caption
   # Math
   - pymdownx.arithmatex:
