@@ -1,52 +1,85 @@
-# Maintainer Guide — Zensical site
+# Artur Domingues — Personal Site
 
-## 1. Overview
-- Personal academic site for Artur Domingues.
-- Production URL: https://arturdomingues.github.io
-- Built with **Zensical** (docs: https://zensical.org/docs/get-started/).
-- Deployed automatically to GitHub Pages via `.github/workflows/docs.yml`.
+Static single-page academic website built with **Zensical** (MkDocs-compatible) and deployed to GitHub Pages. Edit Markdown, preview locally, and deploys automatically on push.
 
-## 2. Project structure
-- `docs/` — content root.
-  - `docs/index.md` — homepage.
-  - `docs/assets/` — static assets (images, PDFs, etc.).
-  - `docs/stylesheets/` — custom styles (e.g., `tokyo-night.css`).
-- `mkdocs.yml` — Zensical-compatible site configuration.
-- `.github/workflows/docs.yml` — Actions workflow that builds with `zensical build --clean` and publishes to Pages.
-- `site/` — generated output (ignored).
+---
 
-## 3. Local development
-1. Create a virtual environment and install Zensical using pyproject.toml:
-   ```bash
-   uv sync
-   ```
-2. Live preview:
-   ```bash
-   uv run zensical serve
-   ```
-   Serves the docs with hot reload.
-3. Production build:
-   ```bash
-   uv run zensical build --clean
-   ```
-   Cleans any previous build and writes the static site to `site/`.
+## Prerequisites
 
-## 4. Configuration guide
-- **Navigation**: edit `nav` in `mkdocs.yml` (paths are relative to `docs/`). Zensical also supports implicit nav from the folder tree if `nav` is omitted.
-- **Theme options**: under `theme` in `mkdocs.yml` you can adjust language, icon set, and color schemes. Palette entries named `tokyo-night-light` and `tokyo-night-dark` are defined for the Tokyo Night theme.
-- **Custom styles**: add CSS files under `docs/stylesheets/` and register them with `extra_css` in `mkdocs.yml`. The Tokyo Night palette lives in `docs/stylesheets/tokyo-night.css`.
-- **Typography, spacing, layout**: extend via custom CSS (e.g., override `body`, headings, or `.md-typeset` tokens) or by providing theme overrides if you add a template override directory supported by Zensical’s customization model.
-- **Adding custom CSS**: place the file in `docs/stylesheets/`, then list it under `extra_css` in `mkdocs.yml`. Zensical will bundle it into the build and apply it across pages.
-- **Theme-related settings**: keep palette names, toggles, and any future font/logo settings together inside the `theme` section so they remain easy to audit.
+- Python **3.12+** (pinned via `.python-version`)
+- [`uv`](https://github.com/astral-sh/uv) for dependency management (`pip install uv` if you don't have it)
 
-## 5. Advanced customization
-- Zensical setup: https://zensical.org/docs/setup/
-- Zensical authoring: https://zensical.org/docs/authoring/
-- Zensical publishing: https://zensical.org/docs/get-started/#publish
-- GitHub Pages: https://docs.github.com/en/pages
+## Getting Started
 
-> Note: If Zensical reorganizes documentation URLs, start from https://zensical.org/docs/ and follow the navigation for setup/authoring/publishing.
+### 1. Clone the repo
+```bash
+git clone https://github.com/ArturDomingues/arturdomingues.github.io.git
+cd arturdomingues.github.io
+```
 
-## 6. Deployment notes
-- Every push to `main` or `master` runs `.github/workflows/docs.yml`.
-- The workflow installs Zensical, runs `zensical build --clean`, uploads `site/`, and deploys to GitHub Pages.
+### 2. Install dependencies
+```bash
+uv sync
+```
+
+No environment variables are required.
+
+### 3. Run (live preview with hot reload)
+```bash
+uv run zensical serve
+```
+Visit http://127.0.0.1:8000 to browse the site as you edit `docs/`.
+
+### 4. Production build
+```bash
+uv run zensical build --clean
+```
+Outputs the static site to `site/` (ignored by git). This is the same command CI runs before publishing.
+
+---
+
+## Running Tests
+
+There are no automated tests. Validate changes by running the production build:
+```bash
+uv run zensical build --clean
+```
+
+---
+
+## Project Structure
+
+```
+.
+├── docs/                  # Content root
+│   ├── index.md           # Homepage content
+│   ├── javascripts/       # MathJax config (mathjax.js)
+│   └── stylesheets/       # Custom Tokyo Night palette (tokyo-night.css)
+├── mkdocs.yml             # Site config (nav, theme, extensions, assets)
+├── pyproject.toml         # Python metadata + zensical dependency
+├── .python-version        # Pins Python 3.12 locally
+├── .github/workflows/     # GitHub Actions build & deploy to Pages
+└── README.md
+```
+
+---
+
+## Contributing
+
+- Create a branch from `main`, then open a PR back to `main`.
+- Before pushing, run `uv run zensical build --clean` to ensure the site builds.
+- Do not commit generated output (`site/`) or virtual envs (`.venv/`); they are gitignored.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Static site generator | Zensical (MkDocs-compatible) |
+| Language & runtime | Python 3.12 |
+| Package manager | uv |
+| Theme | Material for MkDocs with custom Tokyo Night palette |
+| Math rendering | MathJax 3 (CDN) |
+| Hosting | GitHub Pages |
+| CI/CD | GitHub Actions (`.github/workflows/docs.yml`) |
