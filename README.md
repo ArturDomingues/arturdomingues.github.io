@@ -18,7 +18,7 @@
 ## 3. Local development
 1. Create a virtual environment and install Zensical using pyproject.toml:
    ```bash
-   uv init
+   uv sync
    ```
 2. Live preview:
    ```bash
