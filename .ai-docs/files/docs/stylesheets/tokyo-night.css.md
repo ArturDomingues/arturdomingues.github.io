@@ -118,6 +118,7 @@ Not applicable — CSS does not throw errors. Unrecognized CSS custom properties
 - The dark scheme's `.md-typeset .highlight .o` and `.ow` (operators) reuse `var(--tnd-border)` (`#565f89`) — this is intentional Tokyo Night Dark coloring but may appear dim.
 - CSS custom properties defined on `:root` apply globally but are overridden by the scheme-scoped selectors when a scheme is active. The `:root` block doubles as the light scheme default.
 - The file has no vendor prefixes — it targets modern browsers only.
+- **Light-mode blockquote contrast**: `--tnl-muted` (#6c6e75) used for `.md-typeset blockquote` text has a contrast ratio of ~3.8:1 against `--tnl-surface` (#e6e7ed). This fails WCAG AA (4.5:1) for body-size text. Improving contrast would require darkening `--tnl-muted` or using a different variable for blockquote text. (See V001 in `.ai-docs/VISUAL-ISSUES.md`.)
 
 ---
 
