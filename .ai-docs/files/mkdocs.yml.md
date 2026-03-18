@@ -123,10 +123,13 @@ Zensical/MkDocs will raise a build error if:
 
 ## ⚠️ Gotchas & Known Issues
 
-- `pymdownx.superfences` appears **twice** in the extensions list — once with the custom `mermaid` fence configuration, and once as a plain entry. The duplicate is harmless (last entry wins for options) but may cause confusion.
+- `pymdownx.superfences` appears **twice** in the extensions list — once with the custom `mermaid` fence configuration, and once as a plain entry. The last entry wins for options; if the second plain entry ever had options added, it would silently discard the Mermaid config. (See V002 in `.ai-docs/VISUAL-ISSUES.md`.)
 - The `!!python/name:` and `!!python/object/apply:` YAML tags are PyYAML-specific — they call Python objects at parse time. Editing these requires understanding PyYAML constructors.
 - The `slugify` setting for `pymdownx.tabbed` uses `!!python/object/apply:pymdownx.slugs.slugify {}` — this calls the function constructor to produce a proper slugifier instance; it cannot be simplified to a plain string.
 - `use_directory_urls: false` means all URLs are flat `.html` files — no trailing-slash URLs. Keep this in mind when writing internal links.
+- `theme:` has no `name: material` key. Zensical defaults to Material, so the build currently succeeds. If Zensical's default theme ever changes, all custom CSS targeting Material component classes will silently break. (See V003 in `.ai-docs/VISUAL-ISSUES.md`.)
+- `pymdownx.tabbed` is configured without `alternate_style: true`. Material for MkDocs requires this setting for tabs to render correctly. Adding any tabbed content to the site before fixing this will produce broken output. (See V005 in `.ai-docs/VISUAL-ISSUES.md`.)
+- `site_name: My personal page` is a generic placeholder. Browser tab titles and search-engine snippets show this text rather than the author's name. Consider updating to `Artur Domingues`. (See V004 in `.ai-docs/VISUAL-ISSUES.md`.)
 
 ---
 

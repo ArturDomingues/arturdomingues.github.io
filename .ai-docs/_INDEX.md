@@ -110,3 +110,4 @@ uv run zensical build --clean
 | [`.gitignore`](../.gitignore) | Ignores build artifacts, venv, lock file | [.gitignore.md](files/.gitignore.md) |
 | [`.python-version`](../.python-version) | Pins Python version to 3.12 for uv/pyenv | [.python-version.md](files/.python-version.md) |
 | [`LICENSE`](../LICENSE) | Repository license | — |
+| [`.ai-docs/VISUAL-ISSUES.md`](VISUAL-ISSUES.md) | Visual audit inventory: all found issues, fix strategy, resolved log | — |
