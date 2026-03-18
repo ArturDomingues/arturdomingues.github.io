@@ -7,7 +7,8 @@
 
 I am a physicist with a BSc and MSc in Theoretical and Experimental Physics from IFSC–USP. My research focuses on quantum control of solid-state spin systems, particularly NV centers in diamond, integrating optimal control theory, numerical simulation, and machine learning techniques.
 
-My work explores:  
+My work explores:
+
 - Optimal control of open quantum systems  
 - Machine learning strategies for quantum technologies  
 - Simulation of NV center spin dynamics  
