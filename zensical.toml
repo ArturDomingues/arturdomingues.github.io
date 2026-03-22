@@ -20,7 +20,7 @@ nav = [
 ]
 
 [project.theme]
-variant = "classic"
+variant = "classic" # Use Material for MkDocs look-and-feel (matches custom Tokyo Night CSS)
 features = [
     "content.code.copy",
     "content.code.select",
