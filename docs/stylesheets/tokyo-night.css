@@ -107,6 +107,15 @@
   outline: none;
 }
 
+[data-md-color-scheme="tokyo-night-light"] .md-sidebar--primary .md-nav__link--active,
+[data-md-color-scheme="tokyo-night-light"] .md-sidebar--primary .md-nav__item--active > .md-nav__link {
+  background: var(--tnl-azure);
+  color: var(--tnl-surface);
+  box-shadow: inset 3px 0 0 var(--tnl-blue);
+  border-radius: 0;
+  outline: none;
+}
+
 [data-md-color-scheme="tokyo-night-light"] .md-nav--secondary .md-nav__link--active,
 [data-md-color-scheme="tokyo-night-light"] .md-nav--secondary .md-nav__item--active > .md-nav__link {
   border-left: 3px solid var(--tnl-blue);

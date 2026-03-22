@@ -27,7 +27,7 @@ docs/                   Content root (Markdown pages, JS, CSS)
   javascripts/          MathJax 3 config (mathjax.js)
   stylesheets/          Custom Tokyo Night palette (tokyo-night.css)
 .github/workflows/      CI/CD: build + deploy to GitHub Pages
-mkdocs.yml              Site config (nav, theme, extensions, assets)
+zensical.toml          Site config (nav, theme, extensions, assets)
 pyproject.toml          Python project metadata + zensical dependency
 ```
 

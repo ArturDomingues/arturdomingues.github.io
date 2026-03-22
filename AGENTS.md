@@ -2,7 +2,7 @@
 
 ## Project Summary
 
-Personal academic website for Artur Domingues, a physicist specializing in quantum control of solid-state spin systems (NV centers in diamond). Single-page static site built with Zensical (MkDocs-compatible), themed with a custom Tokyo Night palette, and auto-deployed to GitHub Pages on every push to `main` or `master`.
+Personal academic website for Artur Domingues, a physicist specializing in quantum control of solid-state spin systems (NV centers in diamond). Multi-page static site built with Zensical (MkDocs-compatible), themed with a custom Tokyo Night palette, and auto-deployed to GitHub Pages on every push to `main` or `master`.
 
 ## Tech Stack
 
@@ -23,18 +23,23 @@ Personal academic website for Artur Domingues, a physicist specializing in quant
 docs/                   Site content root — Markdown pages, custom JS, custom CSS
 docs/javascripts/       MathJax 3 config script (mathjax.js)
 docs/stylesheets/       Custom Tokyo Night light/dark CSS palette (tokyo-night.css)
+docs/notes/             Placeholder pages for physics, math, and computational notes
 .github/workflows/      CI/CD: build with Zensical, deploy to GitHub Pages (docs.yml)
 ```
 
-Root files: `mkdocs.yml` (site config), `pyproject.toml` (Python deps), `.python-version` (pins 3.12), `.gitignore`, `LICENSE` (MIT), `README.md`, `AGENTS.md` (this file), `TODO.md`.
+Root files: `zensical.toml` (site config), `pyproject.toml` (Python deps), `.python-version` (pins 3.12), `.gitignore`, `LICENSE` (MIT), `README.md`, `AGENTS.md` (this file), `TODO.md`. Legacy `mkdocs.yml.bak` is kept as a backup reference.
 
 ## Module Dependency Graph
 
 This project has no Python source modules. The build-time dependency chain is:
 
 ```
-mkdocs.yml
-├── docs/index.md                          (sole content page, referenced by nav)
+zensical.toml
+├── docs/index.md                          (homepage, referenced by nav)
+├── docs/notes/index.md                    (notes overview page)
+├── docs/notes/physics.md                  (physics notes placeholder)
+├── docs/notes/math.md                     (math notes placeholder)
+├── docs/notes/computational.md            (computational notes placeholder)
 ├── docs/javascripts/mathjax.js            (extra_javascript — must load before CDN script)
 ├── docs/stylesheets/tokyo-night.css       (extra_css — scheme names must match palette entries)
 └── https://unpkg.com/mathjax@3/...        (extra_javascript — CDN, loaded after mathjax.js)
@@ -44,14 +49,15 @@ mkdocs.yml
 
 ## Conventions
 
-- **Single-page site**: all content lives in `docs/index.md`. New pages need a `.md` file in `docs/` plus a `nav` entry in `mkdocs.yml`.
+- **Multi-page site**: the homepage lives in `docs/index.md`. Additional sections (e.g., Notes) live in subdirectories under `docs/`. New pages need a `.md` file in `docs/` plus a `nav` entry in `zensical.toml`.
+- **Configuration format**: the project uses `zensical.toml` (TOML format). The legacy `mkdocs.yml` is kept as `mkdocs.yml.bak` for reference. All config changes should be made to `zensical.toml`. Consult https://zensical.org/docs/setup/basics/ for the TOML settings reference.
 - **CSS custom properties**: light uses `--tnl-*`, dark uses `--tnd-*`. Always update both scheme blocks together. New variables may be added when the existing palette lacks a needed value (e.g., `--tnl-card: #ffffff` for a white card/admonition background on the light surface). Document any new variables here.
 - **Material variable overrides**: both scheme blocks in `tokyo-night.css` define `--md-*` overrides (e.g., `--md-default-bg-color`, `--md-primary-bg-color`, `--md-admonition-bg-color`) that map the palette to Material's built-in components (search dialog, tooltips, admonitions, etc.). When adding a new palette variable, also check if it needs to be mapped to a `--md-*` variable.
 - **Dual-mode verification**: every visual change must be verified in both `tokyo-night-light` and `tokyo-night-dark` modes. Never consider a CSS change complete after checking only one mode.
-- **New CSS**: place in `docs/stylesheets/`, register under `extra_css` in `mkdocs.yml`.
-- **New JS**: place in `docs/javascripts/`, register under `extra_javascript` in `mkdocs.yml`. Load order matters — config scripts before CDN scripts.
+- **New CSS**: place in `docs/stylesheets/`, register under `extra_css` in `zensical.toml`.
+- **New JS**: place in `docs/javascripts/`, register under `extra_javascript` in `zensical.toml`. Load order matters — config scripts before CDN scripts.
 - **Math delimiters**: inline `\( ... \)`, display `\[ ... \]`. MathJax is already configured.
-- **Mermaid diagrams**: use ` ```mermaid ` fenced blocks — configured in `mkdocs.yml`.
+- **Mermaid diagrams**: use ` ```mermaid ` fenced blocks — configured in `zensical.toml`.
 - **URL strategy**: `use_directory_urls: false` — flat `.html` URLs (no trailing slashes).
 - **Local execution**: always use `uv run <command>`.
 - **No linting/testing infrastructure**: validation is the build itself (`uv run zensical build --clean`).
@@ -77,7 +83,7 @@ No environment variables, secrets, or `.env` file required.
 ## Rules for Agents
 
 - **Do not commit** `site/`, `.venv/`, or `uv.lock` — all gitignored.
-- **Do not add a page** without updating `nav` in `mkdocs.yml`.
+- **Do not add a page** without updating `nav` in `zensical.toml`.
 - **Do not reorder** `extra_javascript` entries — `mathjax.js` must appear before the MathJax CDN URL.
 - **Do not edit only one palette scheme** — always update both `tokyo-night-light` and `tokyo-night-dark` in `tokyo-night.css`.
 - **Do not pin `zensical`** to a specific version unless explicitly asked.
