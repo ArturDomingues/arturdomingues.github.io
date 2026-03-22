@@ -2,8 +2,8 @@
 
 ## Current Priorities
 
-- [x] `mkdocs.yml` line 1 — `site_name: My personal page` is a generic placeholder; browser tabs and search-engine snippets show this instead of the author's name. Consider changing to `Artur Domingues`.
-- [x] `mkdocs.yml` lines 24–25 — `pymdownx.tabbed` is configured without `alternate_style: true`. Material for MkDocs requires this for tabbed content to render correctly. No tabbed content exists yet, but adding any will produce broken output.
+- [x] Site name was a generic placeholder — updated to `Artur Domingues` (now in `zensical.toml`).
+- [x] `pymdownx.tabbed` was missing `alternate_style: true` — fixed (now in `zensical.toml`).
 
 ## Backlog
 
@@ -11,9 +11,9 @@
 
 ## Tech Debt
 
-- [x] `mkdocs.yml` lines 9–14 and 22 — `pymdownx.superfences` appears twice in the extensions list (once with the Mermaid custom fence config, once plain). The duplicate is currently harmless but brittle — if options are added to the second entry, they silently discard the Mermaid config.
-- [x] `mkdocs.yml` line 52 — `theme:` block has no `name: material` key. Zensical defaults to Material so the build works, but if Zensical's default ever changes, all custom CSS targeting Material classes will break silently.
-- [ ] `mkdocs.yml` line 51 — MathJax CDN URL (`https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js`) is unpinned. A breaking MathJax 3.x release could silently break math rendering.
+- [x] `pymdownx.superfences` duplicate entry was resolved during migration to `zensical.toml`.
+- [x] `theme: material` is now explicit in `zensical.toml` via `variant = "classic"`.
+- [ ] MathJax CDN URL (`https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js`) is unpinned. A breaking MathJax 3.x release could silently break math rendering (now in `zensical.toml`).
 - [ ] `.github/workflows/docs.yml` — `pip install zensical` has no version pin and `python-version: 3.x` resolves to latest Python 3. A breaking upstream release can fail the build without any local code change.
 - [ ] `.gitignore` — Contains legacy ActionScript/Flash entries (`bin-debug/`, `bin-release/`, `*.swf`, `*.air`, `*.ipa`, `*.apk`) from a template. Harmless but confusing; could be cleaned up.
 - [ ] `pyproject.toml` / `.gitignore` — `uv.lock` is gitignored, so different developers and CI may resolve different Zensical versions. If reproducibility is needed, commit `uv.lock`.

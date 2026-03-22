@@ -1,6 +1,6 @@
 # Artur Domingues — Personal Academic Website
 
-Static single-page academic website deployed to [arturdomingues.github.io](https://arturdomingues.github.io).
+Static academic website deployed to [arturdomingues.github.io](https://arturdomingues.github.io).
 
 ## What It Does
 
@@ -23,11 +23,12 @@ No environment variables required.
 
 ```
 docs/                   Content root (Markdown pages, JS, CSS)
-  index.md              Homepage — the sole content page
+  index.md              Homepage
+  notes/                Study notes section (placeholder pages)
   javascripts/          MathJax 3 config (mathjax.js)
   stylesheets/          Custom Tokyo Night palette (tokyo-night.css)
 .github/workflows/      CI/CD: build + deploy to GitHub Pages
-mkdocs.yml              Site config (nav, theme, extensions, assets)
+zensical.toml          Site config (nav, theme, extensions, assets)
 pyproject.toml          Python project metadata + zensical dependency
 ```
 
