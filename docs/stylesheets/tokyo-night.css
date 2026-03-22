@@ -90,11 +90,13 @@
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-typeset a {
-  color: var(--tnl-cyan);
+  color: var(--tnl-blue);
+  text-decoration: underline;
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-typeset a:hover {
-  color: var(--tnl-blue);
+  color: var(--tnl-azure);
+  text-decoration: underline;
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-typeset code {
@@ -126,7 +128,7 @@
 
 [data-md-color-scheme="tokyo-night-light"] .md-typeset blockquote {
   border-left: 4px solid var(--tnl-green);
-  color: var(--tnl-muted);
+  color: var(--tnl-slate);
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-typeset table,
@@ -289,10 +291,12 @@
 
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset a {
   color: var(--tnd-sky);
+  text-decoration: underline;
 }
 
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset a:hover {
   color: var(--tnd-blue);
+  text-decoration: underline;
 }
 
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset code {
@@ -325,7 +329,7 @@
 
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset blockquote {
   border-left: 4px solid var(--tnd-teal);
-  color: var(--tnd-muted);
+  color: var(--tnd-soft);
   background: var(--tnd-surface);
 }
 
@@ -396,8 +400,8 @@
 
 [data-md-color-scheme="tokyo-night-dark"] hr,
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset hr {
-  border: 1px solid var(--tnd-border);
-  background-color: var(--tnd-border);
+  border: 1px solid var(--tnd-muted);
+  background-color: var(--tnd-muted);
 }
 
 /* Syntax highlighting */
@@ -432,7 +436,7 @@
 
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .nf,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .fm {
-  color: var(--tnl-cyan);
+  color: var(--tnl-blue);
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .c,
@@ -488,7 +492,7 @@
 
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .o,
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .ow {
-  color: var(--tnd-border);
+  color: var(--tnd-muted);
 }
 
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .kc,
