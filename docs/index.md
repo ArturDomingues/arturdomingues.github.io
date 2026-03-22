@@ -53,9 +53,4 @@ Current focus: implementation and integration of the optical dynamics module for
 - GitHub: [github.com/ArturDomingues](https://github.com/ArturDomingues)  
 - LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/artur-venturelli-domingues-a39963122)
 
----
-
-## Disclaimer
-
-This website is currently under construction. Content, documentation, and project structure are being actively updated.
 

@@ -1,4 +1,4 @@
-site_name: My personal page
+site_name: Artur Domingues
 docs_dir: docs
 repo_url: https://github.com/ArturDomingues/arturdomingues.github.io
 site_url: https://arturdomingues.github.io
@@ -19,9 +19,9 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
   # Tabs
   - pymdownx.tabbed:
+      alternate_style: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify {}
   # Lists with checkboxes
   - def_list
@@ -50,6 +50,7 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 theme:
+  name: material
   features:
     - content.code.copy
     - content.code.select
