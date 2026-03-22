@@ -104,6 +104,7 @@
   color: var(--tnl-foreground);
   box-shadow: inset 3px 0 0 var(--tnl-blue);
   border-radius: 0;
+  outline: none;
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-nav--secondary .md-nav__link--active,
@@ -244,6 +245,28 @@
 [data-md-color-scheme="tokyo-night-light"] .md-search-result__item mark {
   background: var(--tnl-blue);
   color: var(--tnl-surface);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-search__scrollwrap {
+  background: var(--tnl-surface);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-search-result {
+  background: var(--tnl-surface);
+  color: var(--tnl-navy);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-search-result__meta {
+  background: var(--tnl-card);
+  color: var(--tnl-muted);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-search-result__link {
+  background: var(--tnl-card);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-search-result__link:hover {
+  background: var(--tnl-surface);
 }
 
 [data-md-color-scheme="tokyo-night-dark"] {
@@ -478,6 +501,41 @@
 [data-md-color-scheme="tokyo-night-dark"] .md-search-result__item mark {
   background: var(--tnd-blue);
   color: var(--tnd-background);
+}
+
+/* Search dialog — force dark background on all containers */
+[data-md-color-scheme="tokyo-night-dark"] .md-search__scrollwrap {
+  background: var(--tnd-surface);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-search-result {
+  background: var(--tnd-surface);
+  color: var(--tnd-soft);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-search-result__meta {
+  background: var(--tnd-background);
+  color: var(--tnd-muted);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-search-result__link {
+  background: var(--tnd-surface);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-search-result__link:hover {
+  background: var(--tnd-border);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-search-result__article {
+  color: var(--tnd-soft);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-search-result__teaser {
+  color: var(--tnd-text);
+}
+
+[data-md-color-scheme="tokyo-night-dark"] .md-search-result__title {
+  color: var(--tnd-soft);
 }
 
 [data-md-color-scheme="tokyo-night-dark"] hr,
