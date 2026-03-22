@@ -45,7 +45,9 @@ mkdocs.yml
 ## Conventions
 
 - **Single-page site**: all content lives in `docs/index.md`. New pages need a `.md` file in `docs/` plus a `nav` entry in `mkdocs.yml`.
-- **CSS custom properties**: light uses `--tnl-*`, dark uses `--tnd-*`. Always update both scheme blocks together.
+- **CSS custom properties**: light uses `--tnl-*`, dark uses `--tnd-*`. Always update both scheme blocks together. New variables may be added when the existing palette lacks a needed value (e.g., `--tnl-card: #ffffff` for a white card/admonition background on the light surface). Document any new variables here.
+- **Material variable overrides**: both scheme blocks in `tokyo-night.css` define `--md-*` overrides (e.g., `--md-default-bg-color`, `--md-primary-bg-color`, `--md-admonition-bg-color`) that map the palette to Material's built-in components (search dialog, tooltips, admonitions, etc.). When adding a new palette variable, also check if it needs to be mapped to a `--md-*` variable.
+- **Dual-mode verification**: every visual change must be verified in both `tokyo-night-light` and `tokyo-night-dark` modes. Never consider a CSS change complete after checking only one mode.
 - **New CSS**: place in `docs/stylesheets/`, register under `extra_css` in `mkdocs.yml`.
 - **New JS**: place in `docs/javascripts/`, register under `extra_javascript` in `mkdocs.yml`. Load order matters — config scripts before CDN scripts.
 - **Math delimiters**: inline `\( ... \)`, display `\[ ... \]`. MathJax is already configured.
