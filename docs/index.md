@@ -3,22 +3,21 @@
 
 ---
 
-## Bio
+## :material-account: Bio
 
 I am a physicist with a BSc and MSc in Theoretical and Experimental Physics from IFSC–USP. My research focuses on quantum control of solid-state spin systems, particularly NV centers in diamond, integrating optimal control theory, numerical simulation, and machine learning techniques.
 
-My work explores:
-
-- Optimal control of open quantum systems  
-- Machine learning strategies for quantum technologies  
-- Simulation of NV center spin dynamics  
-- Thermodynamic aspects of quantum mechanics  
+!!! abstract "Research Focus"
+    - Optimal control of open quantum systems  
+    - Machine learning strategies for quantum technologies  
+    - Simulation of NV center spin dynamics  
+    - Thermodynamic aspects of quantum mechanics  
 
 ---
 
-## Works
+## :material-book-open-variant: Works
 
-### MSc Dissertation
+### :material-school: MSc Dissertation
 
 **Simulations of NV Color Centers Dynamics Using QuTiP**  
 University of São Paulo (USP), 2025.  
@@ -28,7 +27,7 @@ Full text available at:
 
 ---
 
-### Research Code
+### :material-code-braces: Research Code
 
 **NV Optical Simulation – Dynamic Baseline (MSc Project Repository)**  
 [GitHub Repository](https://github.com/ArturDomingues/nv-optical-sim-dyn-baseline)
@@ -37,7 +36,7 @@ This repository contains the simulation framework developed during my master's r
 
 ---
 
-### Ongoing Contribution
+### :material-cog: Ongoing Contribution
 
 **QuaCCAToo – Quantum Control and Characterization Toolkit**  
 [QuaCCAToo on GitHub](https://github.com/QISS-HZB/QuaCCAToo)
@@ -47,10 +46,11 @@ Current focus: implementation and integration of the optical dynamics module for
 
 ---
 
-## Contact
+## :material-email: Contact
 
-- Email: [artur_venturelli@outlook.com](mailto:artur_venturelli@outlook.com)  
-- GitHub: [github.com/ArturDomingues](https://github.com/ArturDomingues)  
-- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/artur-venturelli-domingues-a39963122)
+:material-email: [artur_venturelli@outlook.com](mailto:artur_venturelli@outlook.com) · :material-github: [GitHub](https://github.com/ArturDomingues) · :material-linkedin: [LinkedIn](https://www.linkedin.com/in/artur-venturelli-domingues-a39963122)
 
+---
 
+!!! info "Site Under Development"
+    This site is continuously updated. New content, projects, and pages will be added over time.
