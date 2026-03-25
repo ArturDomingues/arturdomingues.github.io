@@ -1,7 +1,8 @@
 # :material-atom: Physics Notes
 
+<!--prettier-ignore-->
 !!! info "Placeholder"
-This page is a placeholder. Physics notes will be added here over time.
+    This page is a placeholder. Physics notes will be added here over time.
 
 Planned topics:
 

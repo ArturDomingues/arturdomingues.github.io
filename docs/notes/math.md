@@ -1,7 +1,8 @@
 # :material-function-variant: Mathematics Notes
 
+<!--prettier-ignore-->
 !!! info "Placeholder"
-This page is a placeholder. Mathematics notes will be added here over time.
+    This page is a placeholder. Mathematics notes will be added here over time.
 
 Planned topics:
 
