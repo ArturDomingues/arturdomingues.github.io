@@ -1,26 +1,6 @@
 :root,
-/* =========================================================
-   Tokyo Night — Complete Material MkDocs Theme
-   ---------------------------------------------------------
-   Background: #24283b (charcoal blue)
-   Accents: Same vibrant colors as Night theme
-   ========================================================= */
-
 [data-md-color-scheme="tokyo-night-light"] {
-  /* Core Light palette */
-  --tnl-bg: #e6e7ed;
-  --tnl-bg-dark: #d5d6db;
-  --tnl-bg-highlight: #d5d6db;
-  --tnl-bg-popup: #f4f5f9;
-  --tnl-bg-visual: #a8afc0;
-  
-  /* Foreground */
-  --tnl-fg: #343b58;
-  --tnl-fg-dark: #40434f;
-  --tnl-fg-muted: #6c6e75;
-  --tnl-fg-gutter: #b0b3c0;
-  
-  /* Accent colors */
+  /* Tokyo Night Light palette */
   --tnl-red: #8c4351;
   --tnl-orange: #965027;
   --tnl-amber: #8f5e15;
@@ -32,20 +12,21 @@
   --tnl-blue: #2959aa;
   --tnl-violet: #5a3e8e;
   --tnl-navy: #343b58;
-  
-  /* Surface/sidebar */
+  --tnl-slate: #40434f;
+  --tnl-indigo: #343b58;
+  --tnl-muted: #6c6e75;
   --tnl-surface: #e6e7ed;
-  --tnl-surface-2: #f4f5f9;
-  --tnl-card: #ffffff;
   --tnl-border: #b0b3c0;
-  
+  --tnl-surface-2: #f4f5f9;
+  --tnl-foreground: #2e3140;
+
   /* Material theme variable overrides */
   --md-default-bg-color: var(--tnl-surface);
-  --md-default-bg-color--light: color-mix(in srgb, var(--tnl-surface) 85%, white);
+  --md-default-bg-color--light:color-mix(in srgb,var(--tnl-surface) 85%, white);
   --md-default-bg-color--lighter: color-mix(in srgb, var(--tnl-surface) 70%, white);
   --md-default-bg-color--lightest: color-mix(in srgb, var(--tnl-surface) 55%, white);
   --md-default-fg-color: var(--tnl-navy);
-  --md-default-fg-color--light: var(--tnl-fg-dark);
+  --md-default-fg-color--light: var(--tnl-foreground);
   --md-default-fg-color--lighter: var(--tnl-muted);
   --md-default-fg-color--lightest: var(--tnl-surface);
   --md-primary-fg-color: var(--tnl-surface);
@@ -56,24 +37,31 @@
   --md-accent-fg-color: var(--tnl-blue);
   --md-accent-fg-color--transparent: color-mix(in srgb, var(--tnl-blue) 16%, transparent);
   --md-accent-bg-color: var(--tnl-surface);
+  --md-accent-bg-color--light: color-mix(in srgb, var(--tnl-surface) 70%, transparent);
   --md-code-bg-color: var(--tnl-navy);
+  --md-code-bg-color--light: color-mix(in srgb, var(--tnl-navy) 90%, transparent);
+  --md-code-bg-color--lighter: color-mix(in srgb, var(--tnl-navy) 60%, transparent);
   --md-code-fg-color: var(--tnl-surface);
   --md-typeset-color: var(--tnl-navy);
   --md-typeset-a-color: var(--tnl-blue);
   --md-typeset-mark-color: color-mix(in srgb, var(--tnl-amber) 28%, transparent);
   --md-typeset-table-color: color-mix(in srgb, var(--tnl-border) 60%, transparent);
+  --md-typeset-table-color--light: color-mix(in srgb, var(--tnl-border) 25%, transparent);
   --md-typeset-kbd-color: var(--tnl-surface-2);
+  --md-typeset-kbd-accent-color: white;
   --md-typeset-kbd-border-color: var(--tnl-border);
   --md-admonition-bg-color: white;
   --md-admonition-fg-color: var(--tnl-navy);
+  --md-footer-fg-color: var(--tnl-navy);
+  --md-footer-fg-color--light: var(--tnl-foreground);
+  --md-footer-fg-color--lighter: var(--tnl-muted);
   --md-footer-bg-color: var(--tnl-surface-2);
   --md-footer-bg-color--dark: var(--tnl-surface);
-  --md-footer-fg-color: var(--tnl-navy);
   --md-warning-fg-color: var(--tnl-navy);
   --md-warning-bg-color: color-mix(in srgb, var(--tnl-amber) 35%, white);
-  --md-shadow-z1: 0 0.2rem 0.5rem rgba(52, 59, 88, 0.08), 0 0 0.05rem rgba(52, 59, 88, 0.06);
-  --md-shadow-z2: 0 0.2rem 0.5rem rgba(52, 59, 88, 0.12), 0 0 0.05rem rgba(52, 59, 88, 0.12);
-  --md-shadow-z3: 0 0.5rem 2rem rgba(52, 59, 88, 0.16), 0 0 0.05rem rgba(52, 59, 88, 0.16);
+  --md-shadow-z1: 0 0.2rem 0.5rem rgba(0,0,0,.08), 0 0 0.05rem rgba(0,0,0,.08);
+  --md-shadow-z2: 0 0.2rem 0.5rem rgba(0,0,0,.14), 0 0 0.05rem rgba(0,0,0,.14);
+  --md-shadow-z3: 0 0.5rem 2rem rgba(0,0,0,.18), 0 0 0.05rem rgba(0,0,0,.18);
 
   color: var(--tnl-navy);
   background-color: var(--tnl-surface);
@@ -81,125 +69,116 @@
 }
 
 /* =========================================================
-   Scrollbars
+   Tokyo Night Light — component overrides for Material MkDocs
+   ---------------------------------------------------------
+   Goals of this revision:
+   - keep the same visual language
+   - reduce duplicated intent
+   - separate layout / navigation / content / search concerns
+   - make hover, active, and focus states more consistent
+   - simplify admonition text rules
    ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
 
-[data-md-color-scheme="tokyo-night-light"] ::-webkit-scrollbar-track {
-  background: var(--tnl-bg-dark);
-}
-
-[data-md-color-scheme="tokyo-night-light"] ::-webkit-scrollbar-thumb {
-  background: var(--tnl-surface);
-  border-radius: 5px;
-  border: 2px solid var(--tnl-bg);
-}
-
-[data-md-color-scheme="tokyo-night-light"] ::-webkit-scrollbar-thumb:hover {
-  background: var(--tnl-border);
-}
-
-/* =========================================================
-   Selection
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] ::selection {
-  background: var(--tnl-bg-visual);
-  color: var(--tnl-fg);
-}
-
-/* =========================================================
-   Base Layout
-   ========================================================= */
 [data-md-color-scheme="tokyo-night-light"] body,
 [data-md-color-scheme="tokyo-night-light"] .md-container,
 [data-md-color-scheme="tokyo-night-light"] .md-content {
-  background: var(--tnl-bg);
-  color: var(--tnl-fg);
+  /* Main page canvas */
+  background-color: var(--tnl-surface);
+  color: var(--tnl-navy);
 }
 
 /* =========================================================
-   Header and Navigation
+   Header and top tabs
    ========================================================= */
+
 [data-md-color-scheme="tokyo-night-light"] .md-header,
 [data-md-color-scheme="tokyo-night-light"] .md-tabs {
-  background: var(--tnl-surface);
-  border-bottom: 1px solid var(--tnl-border);
-  color: var(--tnl-fg);
+  background-color: var(--tnl-azure);
+  border-bottom: 1px solid var(--tnl-foreground);
+  color: var(--tnl-surface);
 }
 
-[data-md-color-scheme="tokyo-night-light"] .md-header__title,
 [data-md-color-scheme="tokyo-night-light"] .md-header__button,
+[data-md-color-scheme="tokyo-night-light"] .md-header__title,
 [data-md-color-scheme="tokyo-night-light"] .md-tabs__link {
-  color: var(--tnl-fg);
+  color: var(--tnl-surface);
 }
 
+/* Hover/focus states for top-level navigation controls */
 [data-md-color-scheme="tokyo-night-light"] .md-header__button:hover,
 [data-md-color-scheme="tokyo-night-light"] .md-tabs__link:hover {
-  color: var(--tnl-sky);
+  color: var(--tnl-blue);
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-header__button:focus-visible,
 [data-md-color-scheme="tokyo-night-light"] .md-tabs__link:focus-visible {
-  outline: 2px solid var(--tnl-sky);
+  outline: 2px solid var(--tnl-blue);
   outline-offset: 2px;
 }
 
 /* =========================================================
-   Sidebars
+   Sidebars and navigation
    ========================================================= */
+
+/* Primary sidebar keeps the strong azure navigation rail */
 [data-md-color-scheme="tokyo-night-light"] .md-sidebar--primary,
 [data-md-color-scheme="tokyo-night-light"] .md-sidebar--primary .md-nav,
 [data-md-color-scheme="tokyo-night-light"] .md-sidebar--primary .md-nav__title {
-  background: var(--tnl-bg);
-  color: var(--tnl-fg);
+  background-color: var(--tnl-surface);
+  color: var(--tnl-foreground);
 }
 
+/* Secondary sidebar is lighter and closer to document background */
 [data-md-color-scheme="tokyo-night-light"] .md-sidebar--secondary,
 [data-md-color-scheme="tokyo-night-light"] .md-sidebar--secondary .md-nav,
 [data-md-color-scheme="tokyo-night-light"] .md-sidebar--secondary .md-nav__title {
-  background: var(--tnl-bg);
-  color: var(--tnl-fg);
+  background: var(--tnl-surface);
+  color: var(--tnl-foreground);
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-sidebar--secondary {
   border-left: 1px solid var(--tnl-border);
 }
 
+/* Default nav links */
 [data-md-color-scheme="tokyo-night-light"] .md-nav__link {
-  color: var(--tnl-fg);
-  border-radius: 4px;
+  color: var(--tnl-foreground);
+  border-radius: 0;
 }
 
-[data-md-color-scheme="tokyo-night-light"] .md-nav__link:hover {
-  color: var(--tnl-sky);
+/* Hover state only — do not mix with active state */
+[data-md-color-scheme="tokyo-night-light"] .md-nav__link:hover{
+  color: var(--tnl-blue);
 }
 
+/* Keyboard focus */
 [data-md-color-scheme="tokyo-night-light"] .md-nav__link:focus-visible {
-  outline: 2px solid var(--tnl-sky);
+  outline: 2px solid var(--tnl-blue);
   outline-offset: 2px;
 }
 
+/* General active item style */
 [data-md-color-scheme="tokyo-night-light"] .md-nav__link--active,
 [data-md-color-scheme="tokyo-night-light"] .md-nav__item--active > .md-nav__link {
-  background: var(--tnl-bg);
-  color: var(--tnl-fg);
-  box-shadow: inset 3px 0 0 var(--tnl-sky);
+  background: var(--tnl-surface);
+  color: var(--tnl-foreground);
+  box-shadow: inset 3px 0 0 var(--tnl-blue);
   border-radius: 1px;
   padding-left: 6px;
 }
 
+/* Secondary nav uses an explicit border instead of inset stripe */
 [data-md-color-scheme="tokyo-night-light"] .md-nav--secondary .md-nav__link--active,
 [data-md-color-scheme="tokyo-night-light"] .md-nav--secondary .md-nav__item--active > .md-nav__link {
-  border-left: 3px solid var(--tnl-sky);
+  border-left: 3px solid var(--tnl-blue);
   box-shadow: none;
 }
 
 /* =========================================================
-   Typography & Content
+   Typeset content
    ========================================================= */
+
+/* Headings */
 [data-md-color-scheme="tokyo-night-light"] .md-typeset h1,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset h2,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset h3,
@@ -207,79 +186,203 @@
   color: var(--tnl-violet);
 }
 
+/* Links in prose */
 [data-md-color-scheme="tokyo-night-light"] .md-typeset a {
   color: var(--tnl-blue);
   text-decoration: underline;
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-typeset a:hover {
-  color: var(--tnl-sky);
+  color: var(--tnl-azure);
+  text-decoration: underline;
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-typeset a:focus-visible {
-  outline: 2px solid var(--tnl-sky);
+  outline: 2px solid var(--tnl-blue);
   outline-offset: 2px;
 }
 
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .headerlink {
-  color: var(--tnl-fg-muted);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .headerlink:hover {
-  color: var(--tnl-cyan);
-}
-
-[data-md-color-scheme="tokyo-night-light"] hr,
-[data-md-color-scheme="tokyo-night-light"] .md-typeset hr {
-  border: 1px solid var(--tnl-fg-muted);
-  background-color: var(--tnl-fg-muted);
-}
-
-/* =========================================================
-   Code Blocks
-   ========================================================= */
+/* Inline code */
 [data-md-color-scheme="tokyo-night-light"] .md-typeset code {
   color: var(--tnl-red);
-  background-color: var(--tnl-surface-2);
-  border: 1px solid var(--tnl-border);
-  box-shadow: none;
+  background-color: white;
+  border: 1px solid var(--tnl-brown);
 }
 
+/* Fenced code blocks */
 [data-md-color-scheme="tokyo-night-light"] .md-typeset pre {
-  background: var(--tnl-surface);
-  border: 1px solid var(--tnl-border);
+  background: var(--tnl-navy);
+  border: 1px solid var(--tnl-indigo);
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-typeset pre code {
-  background: var(--tnl-surface);
-  color: var(--tnl-fg);
+  background-color: var(--tnl-navy);
+  color: var(--tnl-surface);
   border: none;
   box-shadow: none;
 }
 
-[data-md-color-scheme="tokyo-night-light"] .md-clipboard {
-  color: var(--tnl-fg-muted);
+/* Text selection */
+[data-md-color-scheme="tokyo-night-light"] ::selection {
+  background: var(--tnl-amber);
+  color: var(--tnl-navy);
 }
 
-[data-md-color-scheme="tokyo-night-light"] .md-clipboard:hover {
-  color: var(--tnl-cyan);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-code__nav {
-  background-color: color-mix(in srgb, var(--tnl-bg) 90%, transparent);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-code__button {
-  color: var(--tnl-fg-muted);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-code__button:hover {
-  color: var(--tnl-cyan);
+/* Horizontal rules */
+[data-md-color-scheme="tokyo-night-light"] hr,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset hr {
+  border: 1px solid var(--tnl-border);
+  background-color: var(--tnl-border);
 }
 
 /* =========================================================
-   Syntax Highlighting
+   Footer
    ========================================================= */
+
+[data-md-color-scheme="tokyo-night-light"] .md-footer {
+  background-color: var(--tnl-slate);
+  color: var(--tnl-surface);
+  border-top: 1px solid var(--tnl-foreground);
+}
+
+/* =========================================================
+   Blockquotes
+   ========================================================= */
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset blockquote {
+  border-left: 4px solid var(--tnl-green);
+  background: var(--tnl-surface-2);
+  color: var(--tnl-slate);
+}
+
+/* =========================================================
+   Tables
+   ========================================================= */
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .md-typeset__table {
+  background: var(--tnl-surface);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset table,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset table td,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset table th {
+  border-color: var(--tnl-border);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset table th {
+  background: var(--tnl-indigo);
+  color: var(--tnl-surface);
+}
+
+/* =========================================================
+   Admonitions and details
+   ========================================================= */
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset details {
+  background: white;
+  border-color: var(--tnl-teal);
+  color: var(--tnl-navy);
+}
+
+/* Admonition titles */
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition-title {
+  color: var(--tnl-orange);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition > p:not(.admonition-title),
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition > ul,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition > ol,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition li,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset details > p:not(.admonition-title),
+[data-md-color-scheme="tokyo-night-light"] .md-typeset details > ul,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset details > ol,
+[data-md-color-scheme="tokyo-night-light"] .md-typeset details li {
+  color: var(--tnl-navy);
+}
+
+/* =========================================================
+   Search
+   ========================================================= */
+
+/* Search input */
+[data-md-color-scheme="tokyo-night-light"] .md-search__input,
+[data-md-color-scheme="tokyo-night-light"] .md-search__form .md-search__input {
+  background: var(--tnl-surface);
+  border: 1px solid var(--tnl-border);
+  color: var(--tnl-navy);
+}
+
+/* Search input states */
+[data-md-color-scheme="tokyo-night-light"] .md-search__input:hover {
+  border-color: var(--tnl-blue);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-search__input:focus {
+  border-color: var(--tnl-blue);
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-search__input:focus-visible {
+  outline: 2px solid var(--tnl-blue);
+  outline-offset: 2px;
+}
+
+/* Backdrop behind search dialog */
+[data-md-color-scheme="tokyo-night-light"] .md-search__overlay {
+  background-color: var(--tnl-foreground);
+  opacity: 0.15;
+}
+
+/* Search dialog containers */
+[data-md-color-scheme="tokyo-night-light"] .md-search__inner,
+[data-md-color-scheme="tokyo-night-light"] .md-search__form,
+[data-md-color-scheme="tokyo-night-light"] .md-search__output,
+[data-md-color-scheme="tokyo-night-light"] .md-search__scrollwrap,
+[data-md-color-scheme="tokyo-night-light"] .md-search-result {
+  background: var(--tnl-surface);
+  color: var(--tnl-navy);
+}
+
+/* Keep borders on structural containers only */
+[data-md-color-scheme="tokyo-night-light"] .md-search__inner,
+[data-md-color-scheme="tokyo-night-light"] .md-search__form,
+[data-md-color-scheme="tokyo-night-light"] .md-search__output {
+  border: 1px solid var(--tnl-border);
+}
+
+/* Individual result items */
+[data-md-color-scheme="tokyo-night-light"] .md-search-result__item {
+  border-bottom: 1px solid var(--tnl-border);
+}
+
+/* Highlighted match inside results */
+[data-md-color-scheme="tokyo-night-light"] .md-search-result__item mark {
+  background: var(--tnl-blue);
+  color: var(--tnl-surface);
+}
+
+/* Result metadata and text hierarchy */
+[data-md-color-scheme="tokyo-night-light"] .md-search-result__meta {
+  background: white;
+  color: var(--tnl-muted);
+}
+
+/* Result link container and hover state */
+[data-md-color-scheme="tokyo-night-light"] .md-search-result__link {
+  background: white;
+}
+
+[data-md-color-scheme="tokyo-night-light"] .md-search-result__link:hover {
+  background: var(--tnl-surface-2);
+}
+
+/* =========================================================
+   Syntax highlighting
+   ---------------------------------------------------------
+   Pygments / code token colors inside fenced code blocks
+   ========================================================= */
+
+/* Keywords */
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .k,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .kc,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .kd,
@@ -287,11 +390,7 @@
   color: var(--tnl-blue);
 }
 
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .no,
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .bp {
-  color: var(--tnl-fg);
-}
-
+/* Strings */
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .s,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .sa,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .sb,
@@ -299,6 +398,7 @@
   color: var(--tnl-orange);
 }
 
+/* Numbers */
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .m,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .mb,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .mf,
@@ -307,6 +407,7 @@
   color: var(--tnl-amber);
 }
 
+/* Class / namespace / tag / exception-like names */
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .nc,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .nn,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .nt,
@@ -314,394 +415,31 @@
   color: var(--tnl-violet);
 }
 
+/* Function names */
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .nf,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .fm {
-  color: var(--tnl-cyan);
+  color: var(--tnl-blue);
 }
 
+/* Comments */
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .c,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .cm,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .cp {
-  color: var(--tnl-fg-muted);
+  color: var(--tnl-muted);
 }
 
+/* Operators */
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .o,
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .highlight .ow {
-  color: var(--tnl-fg-dark);
+  color: var(--tnl-brown);
 }
-
-/* =========================================================
-   Tables
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-typeset table {
-  border-color: var(--tnl-border);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset table th {
-  background: var(--tnl-surface);
-  color: var(--tnl-fg);
-  border-color: var(--tnl-border);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset table td {
-  border-color: var(--tnl-border);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset table:not([class]) tbody tr:hover {
-  background-color: color-mix(in srgb, var(--tnl-bg-highlight) 50%, transparent);
-  box-shadow: 0 .05rem 0 var(--tnl-bg) inset;
-}
-
-/* =========================================================
-   Admonitions & Details
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition,
-[data-md-color-scheme="tokyo-night-light"] .md-typeset details {
-  background: var(--tnl-surface);
-  border-color: var(--tnl-cyan);
-  color: var(--tnl-fg);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition-title {
-  color: var(--tnl-orange);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition.note {
-  border-color: var(--tnl-blue);
-  background: color-mix(in srgb, var(--tnl-blue) 10%, var(--tnl-surface));
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition.warning {
-  border-color: var(--tnl-amber);
-  background: color-mix(in srgb, var(--tnl-amber) 10%, var(--tnl-surface));
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition.danger,
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition.failure {
-  border-color: var(--tnl-red);
-  background: color-mix(in srgb, var(--tnl-red) 10%, var(--tnl-surface));
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition.tip,
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .admonition.success {
-  border-color: var(--tnl-green);
-  background: color-mix(in srgb, var(--tnl-green) 10%, var(--tnl-surface));
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset details {
-  background: var(--tnl-surface);
-  border-color: var(--tnl-border);
-}
-
-/* =========================================================
-   Blockquotes
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-typeset blockquote {
-  border-left: 4px solid var(--tnl-teal);
-  background: var(--tnl-surface);
-  color: var(--tnl-fg);
-}
-
-/* =========================================================
-   Search
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-search__input,
-[data-md-color-scheme="tokyo-night-light"] .md-search__form .md-search__input {
-  background: var(--tnl-surface);
-  border: 1px solid var(--tnl-border);
-  color: var(--tnl-bg);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-search__input:hover {
-  border-color: var(--tnl-cyan);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-search__input:focus {
-  border-color: var(--tnl-mint);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-search__input:focus-visible {
-  outline: 2px solid var(--tnl-mint);
-  outline-offset: 2px;
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-search__overlay {
-  background-color: var(--tnl-bg);
-  opacity: 0.15;
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-search__inner,
-[data-md-color-scheme="tokyo-night-light"] .md-search__form,
-[data-md-color-scheme="tokyo-night-light"] .md-search__output,
-[data-md-color-scheme="tokyo-night-light"] .md-search__scrollwrap,
-[data-md-color-scheme="tokyo-night-light"] .md-search-result {
-  background: var(--tnl-fg);
-  color: var(--tnl-bg);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-search__inner,
-[data-md-color-scheme="tokyo-night-light"] .md-search__form,
-[data-md-color-scheme="tokyo-night-light"] .md-search__output {
-  border: 1px solid var(--tnl-border);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-search-result__item {
-  border-bottom: 1px solid var(--tnl-border);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-search-result__item mark {
-  background: var(--tnl-blue);
-  color: var(--tnl-bg);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-search-result__meta {
-  background: var(--tnl-bg);
-  color: var(--tnl-fg-muted);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-search-result__link {
-  background: var(--tnl-surface);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-search-result__link:hover {
-  background: var(--tnl-surface-2);
-}
-
-/* =========================================================
-   Tooltips
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-tooltip__inner {
-  background: var(--tnl-surface);
-  color: var(--tnl-fg);
-  border: 1px solid var(--tnl-border);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-tooltip2__inner {
-  background: var(--tnl-bg-popup);
-  color: var(--tnl-fg);
-}
-
-/* =========================================================
-   Annotations (Footnotes/Citations)
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-annotation__index:after {
-  background-color: var(--tnl-border);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-annotation__index:hover:after,
-[data-md-color-scheme="tokyo-night-light"] .md-tooltip--active + .md-annotation__index:after {
-  background-color: var(--tnl-cyan);
-}
-
-/* =========================================================
-   Progress Bar
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-progress {
-  background: var(--tnl-cyan);
-}
-
-/* =========================================================
-   Tags
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .md-tag {
-  background: var(--tnl-surface-2);
-  color: var(--tnl-fg-dark);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .md-tag[href]:hover {
-  background: var(--tnl-blue);
-  color: var(--tnl-bg);
-}
-
-/* =========================================================
-   Task Lists
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-typeset [type=checkbox]:checked + .task-list-indicator:before {
-  background-color: var(--tnl-green);
-}
-
-/* =========================================================
-   Grid & Cards
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .grid.cards > ol > li,
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .grid.cards > ul > li,
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .grid > .card {
-  background: var(--tnl-surface);
-  border-color: var(--tnl-border);
-}
-
-/* =========================================================
-   Status Icons
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-status--new:after {
-  background-color: var(--tnl-green);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-status--deprecated:after {
-  background-color: var(--tnl-red);
-}
-
-/* =========================================================
-   Consent/Dialog
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-consent__form {
-  background: var(--tnl-surface);
-  color: var(--tnl-fg);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-dialog__inner {
-  color: var(--tnl-bg);
-}
-
-/* =========================================================
-   Feedback
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-feedback__icon:hover {
-  color: var(--tnl-sky);
-}
-
-/* =========================================================
-   Tabbed Sets
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .tabbed-labels {
-  box-shadow: 0 -.05rem 0 inset var(--tnl-border);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .tabbed-labels > label {
-  color: var(--tnl-fg-muted);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .tabbed-labels > label:hover {
-  color: var(--tnl-fg);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .tabbed-labels > label[aria-selected=true] {
-  color: var(--tnl-fg);
-  border-color: var(--tnl-fg);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .tabbed-button {
-  background: var(--tnl-surface);
-  color: var(--tnl-fg-muted);
-}
-
-/* =========================================================
-   Footnotes
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .footnote {
-  color: var(--tnl-fg-muted);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .footnote-ref {
-  color: var(--tnl-blue);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .footnote-backref {
-  color: var(--tnl-blue);
-}
-
-/* =========================================================
-   Critic Markup (del/ins)
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-typeset del.critic {
-  background-color: color-mix(in srgb, var(--tnl-red) 20%, transparent);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-typeset ins.critic {
-  background-color: color-mix(in srgb, var(--tnl-green) 20%, transparent);
-}
-
-/* =========================================================
-   Social Links
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-social__link:hover {
-  color: var(--tnl-sky);
-}
-
-/* =========================================================
-   Keyboard Keys
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .keys kbd {
-  background: var(--tnl-surface-2);
-  color: var(--tnl-fg);
-  box-shadow: 0 0 0 .05rem var(--tnl-border), 0 .15rem 0 var(--tnl-border);
-}
-
-/* =========================================================
-   Content Buttons (Edit/View Source)
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-content__button {
-  background: var(--tnl-surface-2);
-  color: var(--tnl-fg);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-content__button:hover {
-  background: var(--tnl-blue);
-  color: var(--tnl-bg);
-}
-
-/* =========================================================
-   Skip Link
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-skip {
-  background: var(--tnl-bg);
-  color: var(--tnl-fg);
-}
-
-/* =========================================================
-   Banner
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-banner {
-  background-color: color-mix(in srgb, var(--tnl-cyan) 10%, transparent);
-  color: var(--tnl-fg);
-}
-
-[data-md-color-scheme="tokyo-night-light"] .md-banner--warning {
-  background-color: color-mix(in srgb, var(--tnl-amber) 20%, transparent);
-  color: var(--tnl-fg);
-}
-
-/* =========================================================
-   Footer
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-footer {
-  background: var(--tnl-surface);
-  color: var(--tnl-fg);
-  border-top: 1px solid var(--tnl-border);
-}
-
-/* =========================================================
-   Transitions for smooth theme switching
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] body {
-  transition: background-color 0.25s, color 0.25s;
-}
-
-/* =========================================================
-   Tokyo Night  — Complete Material MkDocs Theme
-   ---------------------------------------------------------
-   Background: #24283b (charcoal blue)
-   Accents: Same vibrant colors as Night theme
-   ========================================================= */
 
 [data-md-color-scheme="tokyo-night-dark"] {
-  /* Core Night palette - deepest contrast */
-  --tnd-bg: #1a1b26;
-  --tnd-bg-dark: #16161e;
-  --tnd-bg-highlight: #292e42;
-  --tnd-bg-popup: #16161e;
-  --tnd-bg-visual: #283457;
-  
-  /* Foreground */
-  --tnd-fg: #c0caf5;
-  --tnd-fg-dark: #a9b1d6;
-  --tnd-fg-muted: #565f89;
-  --tnd-fg-gutter: #3b4261;
-  
-  /* Accent colors */
+  /* Tokyo Night Dark palette */
   --tnd-red: #f7768e;
   --tnd-orange: #ff9e64;
   --tnd-amber: #e0af68;
+  --tnd-brown: #cfc9c2;
   --tnd-green: #9ece6a;
   --tnd-teal: #73dacb;
   --tnd-mint: #b4f9f8;
@@ -709,110 +447,98 @@
   --tnd-sky: #7dcfff;
   --tnd-blue: #7aa2f7;
   --tnd-violet: #bb9af7;
-  --tnd-purple: #9d7cd8;
-  
-  /* Surface/sidebar */
+  --tnd-soft: #c0caf5;
+  --tnd-text: #a9b1d6;
+  --tnd-muted: #8f98c9;
+  --tnd-border: #565f89;
   --tnd-surface: #414868;
   --tnd-surface-2: #2a2f4a;
-  --tnd-border: #565f89;
-  
+  --tnd-background: #1a1b26; 
+
   /* Material theme variable overrides */
-  --md-default-bg-color: var(--tnd-bg);
-  --md-default-bg-color--light: color-mix(in srgb, var(--tnd-bg) 85%, white);
-  --md-default-bg-color--lighter: color-mix(in srgb, var(--tnd-bg) 70%, white);
-  --md-default-bg-color--lightest: color-mix(in srgb, var(--tnd-bg) 55%, white);
-  --md-default-fg-color: var(--tnd-fg);
-  --md-default-fg-color--light: var(--tnd-fg-dark);
+  --md-default-bg-color: var(--tnd-background);
+  --md-default-bg-color--light: color-mix(in srgb, var(--tnd-background) 85%, white);
+  --md-default-bg-color--lighter: color-mix(in srgb, var(--tnd-background) 70%, white);
+  --md-default-bg-color--lightest: color-mix(in srgb, var(--tnd-background) 55%, white);
+  --md-default-fg-color: var(--tnd-soft);
+  --md-default-fg-color--light: var(--tnd-text);
   --md-default-fg-color--lighter: var(--tnd-muted);
   --md-default-fg-color--lightest: var(--tnd-border);
-  --md-primary-fg-color: var(--tnd-fg);
-  --md-primary-fg-color--light: var(--tnd-fg-dark);
+  --md-primary-fg-color--light: var(--tnd-text);
   --md-primary-fg-color--dark: var(--tnd-soft);
   --md-primary-bg-color: var(--tnd-surface);
   --md-primary-bg-color--light: color-mix(in srgb, var(--tnd-surface) 70%, transparent);
   --md-accent-fg-color: var(--tnd-cyan);
   --md-accent-fg-color--transparent: color-mix(in srgb, var(--tnd-cyan) 16%, transparent);
   --md-accent-bg-color: var(--tnd-surface);
+  --md-accent-bg-color--light: color-mix(in srgb, var(--tnd-surface) 70%, transparent);--md-primary-fg-color: var(--tnd-soft);
   --md-code-bg-color: var(--tnd-surface);
-  --md-code-fg-color: var(--tnd-fg);
-  --md-typeset-color: var(--tnd-fg);
+  --md-code-bg-color--light: color-mix(in srgb, var(--tnd-surface) 90%, transparent);
+  --md-code-bg-color--lighter: color-mix(in srgb, var(--tnd-surface) 60%, transparent);
+  --md-code-fg-color: var(--tnd-soft);
+  --md-typeset-color: var(--tnd-soft);
   --md-typeset-a-color: var(--tnd-blue);
   --md-typeset-mark-color: color-mix(in srgb, var(--tnd-amber) 35%, transparent);
   --md-typeset-table-color: color-mix(in srgb, var(--tnd-border) 45%, transparent);
+  --md-typeset-table-color--light: color-mix(in srgb, var(--tnd-border) 18%, transparent);
   --md-typeset-kbd-color: var(--tnd-surface-2);
+  --md-typeset-kbd-accent-color: var(--tnd-surface);
   --md-typeset-kbd-border-color: var(--tnd-border);
   --md-admonition-bg-color: var(--tnd-surface);
-  --md-admonition-fg-color: var(--tnd-fg);
+  --md-admonition-fg-color: var(--tnd-soft);
+  --md-footer-fg-color: var(--tnd-soft);
+  --md-footer-fg-color--light: var(--tnd-text);
+  --md-footer-fg-color--lighter: var(--tnd-muted);
   --md-footer-bg-color: var(--tnd-surface);
-  --md-footer-bg-color--dark: var(--tnd-bg);
-  --md-footer-fg-color: var(--tnd-fg);
-  --md-warning-fg-color: var(--tnd-bg);
-  --md-warning-bg-color: var(--tnd-amber);
+  --md-footer-bg-color--dark: var(--tnd-background);
+  --md-warning-fg-color: var(--tnd-background);
+  --md-warning-bg-color: var(--tnd-amber);  
   --md-shadow-z1: 0 0.2rem 0.5rem rgba(0,0,0,.18), 0 0 0.05rem rgba(255,255,255,.08);
   --md-shadow-z2: 0 0.2rem 0.5rem rgba(0,0,0,.35), 0 0 0.05rem rgba(255,255,255,.16);
   --md-shadow-z3: 0 0.5rem 2rem rgba(0,0,0,.40), 0 0 0.05rem rgba(0,0,0,.20);
 
-  color: var(--tnd-fg-dark);
-  background-color: var(--tnd-bg);
+  color: var(--tnd-text);
+  background-color: var(--tnd-background);
   color-scheme: dark;
 }
 
 /* =========================================================
-   Scrollbars
+   Tokyo Night Dark — component overrides for Material MkDocs
+   ---------------------------------------------------------
+   Goals of this revision:
+   - keep the same visual language
+   - reduce duplicated intent
+   - separate layout / navigation / content / search concerns
+   - make hover, active, and focus states more consistent
+   - simplify admonition text rules
    ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
 
-[data-md-color-scheme="tokyo-night-dark"] ::-webkit-scrollbar-track {
-  background: var(--tnd-bg-dark);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] ::-webkit-scrollbar-thumb {
-  background: var(--tnd-surface);
-  border-radius: 5px;
-  border: 2px solid var(--tnd-bg);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] ::-webkit-scrollbar-thumb:hover {
-  background: var(--tnd-border);
-}
-
-/* =========================================================
-   Selection
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] ::selection {
-  background: var(--tnd-bg-visual);
-  color: var(--tnd-fg);
-}
-
-/* =========================================================
-   Base Layout
-   ========================================================= */
 [data-md-color-scheme="tokyo-night-dark"] body,
 [data-md-color-scheme="tokyo-night-dark"] .md-container,
 [data-md-color-scheme="tokyo-night-dark"] .md-content {
-  background: var(--tnd-bg);
-  color: var(--tnd-fg);
+  /* Main page canvas */
+  background: var(--tnd-background);
+  color: var(--tnd-soft);
 }
 
 /* =========================================================
-   Header and Navigation
+   Header and top tabs
    ========================================================= */
+
 [data-md-color-scheme="tokyo-night-dark"] .md-header,
 [data-md-color-scheme="tokyo-night-dark"] .md-tabs {
   background: var(--tnd-surface);
   border-bottom: 1px solid var(--tnd-border);
-  color: var(--tnd-fg);
+  color: var(--tnd-soft);
 }
 
 [data-md-color-scheme="tokyo-night-dark"] .md-header__title,
 [data-md-color-scheme="tokyo-night-dark"] .md-header__button,
 [data-md-color-scheme="tokyo-night-dark"] .md-tabs__link {
-  color: var(--tnd-fg);
+  color: var(--tnd-soft);
 }
 
+/* Hover/focus states for top-level navigation controls */
 [data-md-color-scheme="tokyo-night-dark"] .md-header__button:hover,
 [data-md-color-scheme="tokyo-night-dark"] .md-tabs__link:hover {
   color: var(--tnd-sky);
@@ -825,49 +551,56 @@
 }
 
 /* =========================================================
-   Sidebars
+   Sidebars and navigation
    ========================================================= */
+
+/* Sidebar containers */
 [data-md-color-scheme="tokyo-night-dark"] .md-sidebar--primary,
 [data-md-color-scheme="tokyo-night-dark"] .md-sidebar--primary .md-nav,
 [data-md-color-scheme="tokyo-night-dark"] .md-sidebar--primary .md-nav__title {
-  background: var(--tnd-bg);
-  color: var(--tnd-fg);
+  background: var(--tnd-background);
+  color: var(--tnd-soft);
 }
 
 [data-md-color-scheme="tokyo-night-dark"] .md-sidebar--secondary,
 [data-md-color-scheme="tokyo-night-dark"] .md-sidebar--secondary .md-nav,
 [data-md-color-scheme="tokyo-night-dark"] .md-sidebar--secondary .md-nav__title {
-  background: var(--tnd-bg);
-  color: var(--tnd-fg);
+  background: var(--tnd-background);
+  color: var(--tnd-soft);
 }
 
 [data-md-color-scheme="tokyo-night-dark"] .md-sidebar--secondary {
   border-left: 1px solid var(--tnd-border);
 }
 
+/* Default nav links */
 [data-md-color-scheme="tokyo-night-dark"] .md-nav__link {
-  color: var(--tnd-fg);
-  border-radius: 4px;
+  color: var(--tnd-soft);
+  border-radius: 0;
 }
 
+/* Hover state only — do not mix with active state */
 [data-md-color-scheme="tokyo-night-dark"] .md-nav__link:hover {
   color: var(--tnd-sky);
 }
 
+/* Keyboard focus */
 [data-md-color-scheme="tokyo-night-dark"] .md-nav__link:focus-visible {
   outline: 2px solid var(--tnd-sky);
   outline-offset: 2px;
 }
 
+/* Active item: keep text stable, indicate state with left stripe */
 [data-md-color-scheme="tokyo-night-dark"] .md-nav__link--active,
 [data-md-color-scheme="tokyo-night-dark"] .md-nav__item--active > .md-nav__link {
-  background: var(--tnd-bg);
-  color: var(--tnd-fg);
+  background: var(--tnd-background);
+  color: var(--tnd-soft);
   box-shadow: inset 3px 0 0 var(--tnd-sky);
   border-radius: 1px;
   padding-left: 6px;
 }
 
+/* Secondary nav uses an explicit border instead of inset stripe */
 [data-md-color-scheme="tokyo-night-dark"] .md-nav--secondary .md-nav__link--active,
 [data-md-color-scheme="tokyo-night-dark"] .md-nav--secondary .md-nav__item--active > .md-nav__link {
   border-left: 3px solid var(--tnd-sky);
@@ -875,8 +608,10 @@
 }
 
 /* =========================================================
-   Typography & Content
+   Typeset content
    ========================================================= */
+
+/* Headings */
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset h1,
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset h2,
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset h3,
@@ -884,6 +619,7 @@
   color: var(--tnd-violet);
 }
 
+/* Links in prose */
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset a {
   color: var(--tnd-blue);
   text-decoration: underline;
@@ -891,6 +627,7 @@
 
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset a:hover {
   color: var(--tnd-sky);
+  text-decoration: underline;
 }
 
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset a:focus-visible {
@@ -898,23 +635,7 @@
   outline-offset: 2px;
 }
 
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .headerlink {
-  color: var(--tnd-fg-muted);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .headerlink:hover {
-  color: var(--tnd-cyan);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] hr,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset hr {
-  border: 1px solid var(--tnd-fg-muted);
-  background-color: var(--tnd-fg-muted);
-}
-
-/* =========================================================
-   Code Blocks
-   ========================================================= */
+/* Inline code */
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset code {
   color: var(--tnd-red);
   background-color: var(--tnd-surface-2);
@@ -922,6 +643,7 @@
   box-shadow: none;
 }
 
+/* Fenced code blocks */
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset pre {
   background: var(--tnd-surface);
   border: 1px solid var(--tnd-border);
@@ -929,94 +651,55 @@
 
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset pre code {
   background: var(--tnd-surface);
-  color: var(--tnd-fg);
+  color: var(--tnd-soft);
   border: none;
   box-shadow: none;
 }
 
-[data-md-color-scheme="tokyo-night-dark"] .md-clipboard {
-  color: var(--tnd-fg-muted);
+/* Text selection */
+[data-md-color-scheme="tokyo-night-dark"] ::selection {
+  background: var(--tnd-amber);
+  color: var(--tnd-background);
 }
 
-[data-md-color-scheme="tokyo-night-dark"] .md-clipboard:hover {
-  color: var(--tnd-cyan);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-code__nav {
-  background-color: color-mix(in srgb, var(--tnd-bg) 90%, transparent);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-code__button {
-  color: var(--tnd-fg-muted);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-code__button:hover {
-  color: var(--tnd-cyan);
+/* Horizontal rules */
+[data-md-color-scheme="tokyo-night-dark"] hr,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset hr {
+  border: 1px solid var(--tnd-muted);
+  background-color: var(--tnd-muted);
 }
 
 /* =========================================================
-   Syntax Highlighting
+   Footer
    ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .k,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .kc,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .kd,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .kn {
-  color: var(--tnd-blue);
+
+[data-md-color-scheme="tokyo-night-dark"] .md-footer {
+  background: var(--tnd-surface);
+  color: var(--tnd-soft);
+  border-top: 1px solid var(--tnd-border);
 }
 
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .no,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .bp {
-  color: var(--tnd-fg);
-}
+/* =========================================================
+   Blockquotes
+   ========================================================= */
 
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .s,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .sa,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .sb,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .sc {
-  color: var(--tnd-orange);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .m,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .mb,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .mf,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .mh,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .mi {
-  color: var(--tnd-amber);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .nc,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .nn,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .nt,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .ne {
-  color: var(--tnd-violet);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .nf,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .fm {
-  color: var(--tnd-cyan);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .c,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .cm,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .cp {
-  color: var(--tnd-fg-muted);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .o,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .ow {
-  color: var(--tnd-fg-dark);
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset blockquote {
+  border-left: 4px solid var(--tnd-teal);
+  background: var(--tnd-surface);
+  color: var(--tnd-soft);
 }
 
 /* =========================================================
    Tables
    ========================================================= */
+
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset table {
   border-color: var(--tnd-border);
 }
 
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset table th {
   background: var(--tnd-surface);
-  color: var(--tnd-fg);
+  color: var(--tnd-soft);
   border-color: var(--tnd-border);
 }
 
@@ -1024,71 +707,46 @@
   border-color: var(--tnd-border);
 }
 
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset table:not([class]) tbody tr:hover {
-  background-color: color-mix(in srgb, var(--tnd-bg-highlight) 50%, transparent);
-  box-shadow: 0 .05rem 0 var(--tnd-bg) inset;
-}
-
 /* =========================================================
-   Admonitions & Details
+   Admonitions and details
    ========================================================= */
+
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition,
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset details {
   background: var(--tnd-surface);
   border-color: var(--tnd-cyan);
-  color: var(--tnd-fg);
+  color: var(--tnd-soft);
 }
 
+/* Admonition titles */
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition-title {
   color: var(--tnd-orange);
 }
 
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition.note {
-  border-color: var(--tnd-blue);
-  background: color-mix(in srgb, var(--tnd-blue) 10%, var(--tnd-surface));
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition.warning {
-  border-color: var(--tnd-amber);
-  background: color-mix(in srgb, var(--tnd-amber) 10%, var(--tnd-surface));
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition.danger,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition.failure {
-  border-color: var(--tnd-red);
-  background: color-mix(in srgb, var(--tnd-red) 10%, var(--tnd-surface));
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition.tip,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition.success {
-  border-color: var(--tnd-green);
-  background: color-mix(in srgb, var(--tnd-green) 10%, var(--tnd-surface));
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset details {
-  background: var(--tnd-surface);
-  border-color: var(--tnd-border);
-}
-
-/* =========================================================
-   Blockquotes
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset blockquote {
-  border-left: 4px solid var(--tnd-teal);
-  background: var(--tnd-surface);
-  color: var(--tnd-fg);
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition > p:not(.admonition-title),
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition > ul,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition > ol,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .admonition li,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset details > p:not(.admonition-title),
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset details > ul,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset details > ol,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset details li {
+  color: var(--tnd-soft);
 }
 
 /* =========================================================
    Search
    ========================================================= */
+
+/* Search input */
 [data-md-color-scheme="tokyo-night-dark"] .md-search__input,
 [data-md-color-scheme="tokyo-night-dark"] .md-search__form .md-search__input {
   background: var(--tnd-surface);
   border: 1px solid var(--tnd-border);
-  color: var(--tnd-bg);
+  color: var(--tnd-background);
 }
 
+/* Search input states */
 [data-md-color-scheme="tokyo-night-dark"] .md-search__input:hover {
   border-color: var(--tnd-cyan);
 }
@@ -1102,40 +760,47 @@
   outline-offset: 2px;
 }
 
+/* Backdrop behind search dialog */
 [data-md-color-scheme="tokyo-night-dark"] .md-search__overlay {
-  background-color: var(--tnd-bg);
+  background-color: var(--tnd-background);
   opacity: 0.15;
 }
 
+/* Search dialog containers */
 [data-md-color-scheme="tokyo-night-dark"] .md-search__inner,
 [data-md-color-scheme="tokyo-night-dark"] .md-search__form,
 [data-md-color-scheme="tokyo-night-dark"] .md-search__output,
 [data-md-color-scheme="tokyo-night-dark"] .md-search__scrollwrap,
 [data-md-color-scheme="tokyo-night-dark"] .md-search-result {
-  background: var(--tnd-fg);
-  color: var(--tnd-bg);
+  background: var(--tnd-soft);
+  color: var(--tnd-background);
 }
 
+/* Keep borders on structural containers only */
 [data-md-color-scheme="tokyo-night-dark"] .md-search__inner,
 [data-md-color-scheme="tokyo-night-dark"] .md-search__form,
 [data-md-color-scheme="tokyo-night-dark"] .md-search__output {
   border: 1px solid var(--tnd-border);
 }
 
+/* Individual result items */
 [data-md-color-scheme="tokyo-night-dark"] .md-search-result__item {
   border-bottom: 1px solid var(--tnd-border);
 }
 
+/* Highlighted match inside results */
 [data-md-color-scheme="tokyo-night-dark"] .md-search-result__item mark {
   background: var(--tnd-blue);
-  color: var(--tnd-bg);
+  color: var(--tnd-background);
 }
 
+/* Result metadata and text hierarchy */
 [data-md-color-scheme="tokyo-night-dark"] .md-search-result__meta {
-  background: var(--tnd-bg);
-  color: var(--tnd-fg-muted);
+  background: var(--tnd-background);
+  color: var(--tnd-muted);
 }
 
+/* Result link container and hover state */
 [data-md-color-scheme="tokyo-night-dark"] .md-search-result__link {
   background: var(--tnd-surface);
 }
@@ -1145,213 +810,67 @@
 }
 
 /* =========================================================
-   Tooltips
+   Syntax highlighting
+   ---------------------------------------------------------
+   Pygments / code token colors inside fenced code blocks
    ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-tooltip__inner {
-  background: var(--tnd-surface);
-  color: var(--tnd-fg);
-  border: 1px solid var(--tnd-border);
-}
 
-[data-md-color-scheme="tokyo-night-dark"] .md-tooltip2__inner {
-  background: var(--tnd-bg-popup);
-  color: var(--tnd-fg);
-}
-
-/* =========================================================
-   Annotations (Footnotes/Citations)
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-annotation__index:after {
-  background-color: var(--tnd-border);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-annotation__index:hover:after,
-[data-md-color-scheme="tokyo-night-dark"] .md-tooltip--active + .md-annotation__index:after {
-  background-color: var(--tnd-cyan);
-}
-
-/* =========================================================
-   Progress Bar
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-progress {
-  background: var(--tnd-cyan);
-}
-
-/* =========================================================
-   Tags
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .md-tag {
-  background: var(--tnd-surface-2);
-  color: var(--tnd-fg-dark);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .md-tag[href]:hover {
-  background: var(--tnd-blue);
-  color: var(--tnd-bg);
-}
-
-/* =========================================================
-   Task Lists
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset [type=checkbox]:checked + .task-list-indicator:before {
-  background-color: var(--tnd-green);
-}
-
-/* =========================================================
-   Grid & Cards
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .grid.cards > ol > li,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .grid.cards > ul > li,
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .grid > .card {
-  background: var(--tnd-surface);
-  border-color: var(--tnd-border);
-}
-
-/* =========================================================
-   Status Icons
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-status--new:after {
-  background-color: var(--tnd-green);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-status--deprecated:after {
-  background-color: var(--tnd-red);
-}
-
-/* =========================================================
-   Consent/Dialog
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-consent__form {
-  background: var(--tnd-surface);
-  color: var(--tnd-fg);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-dialog__inner {
-  color: var(--tnd-bg);
-}
-
-/* =========================================================
-   Feedback
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-feedback__icon:hover {
-  color: var(--tnd-sky);
-}
-
-/* =========================================================
-   Tabbed Sets
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .tabbed-labels {
-  box-shadow: 0 -.05rem 0 inset var(--tnd-border);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .tabbed-labels > label {
-  color: var(--tnd-fg-muted);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .tabbed-labels > label:hover {
-  color: var(--tnd-fg);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .tabbed-labels > label[aria-selected=true] {
-  color: var(--tnd-fg);
-  border-color: var(--tnd-fg);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .tabbed-button {
-  background: var(--tnd-surface);
-  color: var(--tnd-fg-muted);
-}
-
-/* =========================================================
-   Footnotes
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .footnote {
-  color: var(--tnd-fg-muted);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .footnote-ref {
+/* Keywords */
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .k,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .kc,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .kd,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .kn {
   color: var(--tnd-blue);
 }
 
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .footnote-backref {
-  color: var(--tnd-blue);
+/* Keyword constants / builtins / special names */
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .no,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .bp {
+  color: var(--tnd-soft);
 }
 
-/* =========================================================
-   Critic Markup (del/ins)
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset del.critic {
-  background-color: color-mix(in srgb, var(--tnd-red) 20%, transparent);
+/* Strings */
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .s,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .sa,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .sb,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .sc {
+  color: var(--tnd-orange);
 }
 
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset ins.critic {
-  background-color: color-mix(in srgb, var(--tnd-green) 20%, transparent);
+/* Numbers */
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .m,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .mb,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .mf,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .mh,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .mi {
+  color: var(--tnd-amber);
 }
 
-/* =========================================================
-   Social Links
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-social__link:hover {
-  color: var(--tnd-sky);
+/* Class / namespace / tag / exception-like names */
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .nc,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .nn,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .nt,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .ne {
+  color: var(--tnd-violet);
 }
 
-/* =========================================================
-   Keyboard Keys
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .keys kbd {
-  background: var(--tnd-surface-2);
-  color: var(--tnd-fg);
-  box-shadow: 0 0 0 .05rem var(--tnd-border), 0 .15rem 0 var(--tnd-border);
+/* Function names */
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .nf,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .fm {
+  color: var(--tnd-cyan);
 }
 
-/* =========================================================
-   Content Buttons (Edit/View Source)
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-content__button {
-  background: var(--tnd-surface-2);
-  color: var(--tnd-fg);
+/* Comments */
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .c,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .cm,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .cp {
+  color: var(--tnd-muted);
 }
 
-[data-md-color-scheme="tokyo-night-dark"] .md-content__button:hover {
-  background: var(--tnd-blue);
-  color: var(--tnd-bg);
-}
-
-/* =========================================================
-   Skip Link
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-skip {
-  background: var(--tnd-bg);
-  color: var(--tnd-fg);
-}
-
-/* =========================================================
-   Banner
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-banner {
-  background-color: color-mix(in srgb, var(--tnd-cyan) 10%, transparent);
-  color: var(--tnd-fg);
-}
-
-[data-md-color-scheme="tokyo-night-dark"] .md-banner--warning {
-  background-color: color-mix(in srgb, var(--tnd-amber) 20%, transparent);
-  color: var(--tnd-fg);
-}
-
-/* =========================================================
-   Footer
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-footer {
-  background: var(--tnd-surface);
-  color: var(--tnd-fg);
-  border-top: 1px solid var(--tnd-border);
-}
-
-/* =========================================================
-   Transitions for smooth theme switching
-   ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] body {
-  transition: background-color 0.25s, color 0.25s;
+/* Operators */
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .o,
+[data-md-color-scheme="tokyo-night-dark"] .md-typeset .highlight .ow {
+  color: var(--tnd-brown);
 }
 
 /* =========================================================

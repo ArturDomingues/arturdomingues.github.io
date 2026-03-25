@@ -20,7 +20,7 @@ nav = [
 ]
 
 [project.theme]
-variant = "classic" # Use Material for MkDocs look-and-feel (matches custom Tokyo Night CSS)
+variant = "classic" # or "modern"
 features = [
     "content.code.copy",
     "content.code.select",
@@ -56,6 +56,12 @@ toggle.name = "Switch to light mode"
 media = "(prefers-color-scheme: light)"
 scheme = "tokyo-night-light"
 toggle.icon = "lucide/sun"
+toggle.name = "Switch to storm mode"
+
+# Palette toggle for storm mode
+[[project.theme.palette]]
+scheme = "tokyo-night-storm"
+toggle.icon = "lucide/cloud"
 toggle.name = "Switch to dark mode"
 
 # Palette toggle for dark mode
