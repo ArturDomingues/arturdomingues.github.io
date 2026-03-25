@@ -1,5 +1,6 @@
-# Artur Domingues  
-## Physics Researcher in Quantum Control and Machine Learning  
+# Artur Domingues
+
+## Physics Researcher in Quantum Control and Machine Learning
 
 ---
 
@@ -7,11 +8,10 @@
 
 I am a physicist with a BSc and MSc in Theoretical and Experimental Physics from IFSC–USP. My research focuses on quantum control of solid-state spin systems, particularly NV centers in diamond, integrating optimal control theory, numerical simulation, and machine learning techniques.
 
-!!! abstract "Research Focus"
-    - Optimal control of open quantum systems  
-    - Machine learning strategies for quantum technologies  
-    - Simulation of NV center spin dynamics  
-    - Thermodynamic aspects of quantum mechanics  
+!!! abstract "Research Focus" - Optimal control of open quantum systems  
+ - Machine learning strategies for quantum technologies  
+ - Simulation of NV center spin dynamics  
+ - Thermodynamic aspects of quantum mechanics
 
 ---
 
@@ -20,7 +20,7 @@ I am a physicist with a BSc and MSc in Theoretical and Experimental Physics from
 ### :material-school: MSc Dissertation
 
 **Simulations of NV Color Centers Dynamics Using QuTiP**  
-University of São Paulo (USP), 2025.  
+University of São Paulo (USP), 2025.
 
 Full text available at:  
 [USP Thesis Repository](https://www.teses.usp.br/teses/disponiveis/76/76134/tde-25112025-095217/pt-br.php)
@@ -53,4 +53,4 @@ Current focus: implementation and integration of the optical dynamics module for
 ---
 
 !!! info "Site Under Development"
-    This site is continuously updated. New content, projects, and pages will be added over time.
+This site is continuously updated. New content, projects, and pages will be added over time.

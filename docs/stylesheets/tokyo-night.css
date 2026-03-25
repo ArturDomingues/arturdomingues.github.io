@@ -13,13 +13,13 @@
   --tnl-bg-highlight: #d5d6db;
   --tnl-bg-popup: #f4f5f9;
   --tnl-bg-visual: #a8afc0;
-  
+
   /* Foreground */
   --tnl-fg: #343b58;
   --tnl-fg-dark: #40434f;
   --tnl-fg-muted: #6c6e75;
   --tnl-fg-gutter: #b0b3c0;
-  
+
   /* Accent colors */
   --tnl-red: #8c4351;
   --tnl-orange: #965027;
@@ -32,36 +32,64 @@
   --tnl-blue: #2959aa;
   --tnl-violet: #5a3e8e;
   --tnl-navy: #343b58;
-  
+
   /* Surface/sidebar */
   --tnl-surface: #e6e7ed;
   --tnl-surface-2: #f4f5f9;
   --tnl-card: #ffffff;
   --tnl-border: #b0b3c0;
-  
+
   /* Material theme variable overrides */
   --md-default-bg-color: var(--tnl-surface);
-  --md-default-bg-color--light: color-mix(in srgb, var(--tnl-surface) 85%, white);
-  --md-default-bg-color--lighter: color-mix(in srgb, var(--tnl-surface) 70%, white);
-  --md-default-bg-color--lightest: color-mix(in srgb, var(--tnl-surface) 55%, white);
+  --md-default-bg-color--light: color-mix(
+    in srgb,
+    var(--tnl-surface) 85%,
+    white
+  );
+  --md-default-bg-color--lighter: color-mix(
+    in srgb,
+    var(--tnl-surface) 70%,
+    white
+  );
+  --md-default-bg-color--lightest: color-mix(
+    in srgb,
+    var(--tnl-surface) 55%,
+    white
+  );
   --md-default-fg-color: var(--tnl-navy);
   --md-default-fg-color--light: var(--tnl-fg-dark);
   --md-default-fg-color--lighter: var(--tnl-muted);
   --md-default-fg-color--lightest: var(--tnl-surface);
   --md-primary-fg-color: var(--tnl-surface);
-  --md-primary-fg-color--light: color-mix(in srgb, var(--tnl-surface) 70%, transparent);
+  --md-primary-fg-color--light: color-mix(
+    in srgb,
+    var(--tnl-surface) 70%,
+    transparent
+  );
   --md-primary-fg-color--dark: white;
   --md-primary-bg-color: var(--tnl-azure);
   --md-primary-bg-color--light: color-mix(in srgb, var(--tnl-azure) 20%, white);
   --md-accent-fg-color: var(--tnl-blue);
-  --md-accent-fg-color--transparent: color-mix(in srgb, var(--tnl-blue) 16%, transparent);
+  --md-accent-fg-color--transparent: color-mix(
+    in srgb,
+    var(--tnl-blue) 16%,
+    transparent
+  );
   --md-accent-bg-color: var(--tnl-surface);
   --md-code-bg-color: var(--tnl-navy);
   --md-code-fg-color: var(--tnl-surface);
   --md-typeset-color: var(--tnl-navy);
   --md-typeset-a-color: var(--tnl-blue);
-  --md-typeset-mark-color: color-mix(in srgb, var(--tnl-amber) 28%, transparent);
-  --md-typeset-table-color: color-mix(in srgb, var(--tnl-border) 60%, transparent);
+  --md-typeset-mark-color: color-mix(
+    in srgb,
+    var(--tnl-amber) 28%,
+    transparent
+  );
+  --md-typeset-table-color: color-mix(
+    in srgb,
+    var(--tnl-border) 60%,
+    transparent
+  );
   --md-typeset-kbd-color: var(--tnl-surface-2);
   --md-typeset-kbd-border-color: var(--tnl-border);
   --md-admonition-bg-color: white;
@@ -71,9 +99,12 @@
   --md-footer-fg-color: var(--tnl-navy);
   --md-warning-fg-color: var(--tnl-navy);
   --md-warning-bg-color: color-mix(in srgb, var(--tnl-amber) 35%, white);
-  --md-shadow-z1: 0 0.2rem 0.5rem rgba(52, 59, 88, 0.08), 0 0 0.05rem rgba(52, 59, 88, 0.06);
-  --md-shadow-z2: 0 0.2rem 0.5rem rgba(52, 59, 88, 0.12), 0 0 0.05rem rgba(52, 59, 88, 0.12);
-  --md-shadow-z3: 0 0.5rem 2rem rgba(52, 59, 88, 0.16), 0 0 0.05rem rgba(52, 59, 88, 0.16);
+  --md-shadow-z1:
+    0 0.2rem 0.5rem rgba(52, 59, 88, 0.08), 0 0 0.05rem rgba(52, 59, 88, 0.06);
+  --md-shadow-z2:
+    0 0.2rem 0.5rem rgba(52, 59, 88, 0.12), 0 0 0.05rem rgba(52, 59, 88, 0.12);
+  --md-shadow-z3:
+    0 0.5rem 2rem rgba(52, 59, 88, 0.16), 0 0 0.05rem rgba(52, 59, 88, 0.16);
 
   color: var(--tnl-navy);
   background-color: var(--tnl-surface);
@@ -159,7 +190,9 @@
 
 [data-md-color-scheme="tokyo-night-light"] .md-sidebar--secondary,
 [data-md-color-scheme="tokyo-night-light"] .md-sidebar--secondary .md-nav,
-[data-md-color-scheme="tokyo-night-light"] .md-sidebar--secondary .md-nav__title {
+[data-md-color-scheme="tokyo-night-light"]
+  .md-sidebar--secondary
+  .md-nav__title {
   background: var(--tnl-bg);
   color: var(--tnl-fg);
 }
@@ -183,7 +216,9 @@
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-nav__link--active,
-[data-md-color-scheme="tokyo-night-light"] .md-nav__item--active > .md-nav__link {
+[data-md-color-scheme="tokyo-night-light"]
+  .md-nav__item--active
+  > .md-nav__link {
   background: var(--tnl-bg);
   color: var(--tnl-fg);
   box-shadow: inset 3px 0 0 var(--tnl-sky);
@@ -191,8 +226,13 @@
   padding-left: 6px;
 }
 
-[data-md-color-scheme="tokyo-night-light"] .md-nav--secondary .md-nav__link--active,
-[data-md-color-scheme="tokyo-night-light"] .md-nav--secondary .md-nav__item--active > .md-nav__link {
+[data-md-color-scheme="tokyo-night-light"]
+  .md-nav--secondary
+  .md-nav__link--active,
+[data-md-color-scheme="tokyo-night-light"]
+  .md-nav--secondary
+  .md-nav__item--active
+  > .md-nav__link {
   border-left: 3px solid var(--tnl-sky);
   box-shadow: none;
 }
@@ -347,9 +387,17 @@
   border-color: var(--tnl-border);
 }
 
-[data-md-color-scheme="tokyo-night-light"] .md-typeset table:not([class]) tbody tr:hover {
-  background-color: color-mix(in srgb, var(--tnl-bg-highlight) 50%, transparent);
-  box-shadow: 0 .05rem 0 var(--tnl-bg) inset;
+[data-md-color-scheme="tokyo-night-light"]
+  .md-typeset
+  table:not([class])
+  tbody
+  tr:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--tnl-bg-highlight) 50%,
+    transparent
+  );
+  box-shadow: 0 0.05rem 0 var(--tnl-bg) inset;
 }
 
 /* =========================================================
@@ -489,7 +537,9 @@
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-annotation__index:hover:after,
-[data-md-color-scheme="tokyo-night-light"] .md-tooltip--active + .md-annotation__index:after {
+[data-md-color-scheme="tokyo-night-light"]
+  .md-tooltip--active
+  + .md-annotation__index:after {
   background-color: var(--tnl-cyan);
 }
 
@@ -516,7 +566,10 @@
 /* =========================================================
    Task Lists
    ========================================================= */
-[data-md-color-scheme="tokyo-night-light"] .md-typeset [type=checkbox]:checked + .task-list-indicator:before {
+[data-md-color-scheme="tokyo-night-light"]
+  .md-typeset
+  [type="checkbox"]:checked
+  + .task-list-indicator:before {
   background-color: var(--tnl-green);
 }
 
@@ -564,18 +617,24 @@
    Tabbed Sets
    ========================================================= */
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .tabbed-labels {
-  box-shadow: 0 -.05rem 0 inset var(--tnl-border);
+  box-shadow: 0 -0.05rem 0 inset var(--tnl-border);
 }
 
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .tabbed-labels > label {
   color: var(--tnl-fg-muted);
 }
 
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .tabbed-labels > label:hover {
+[data-md-color-scheme="tokyo-night-light"]
+  .md-typeset
+  .tabbed-labels
+  > label:hover {
   color: var(--tnl-fg);
 }
 
-[data-md-color-scheme="tokyo-night-light"] .md-typeset .tabbed-labels > label[aria-selected=true] {
+[data-md-color-scheme="tokyo-night-light"]
+  .md-typeset
+  .tabbed-labels
+  > label[aria-selected="true"] {
   color: var(--tnl-fg);
   border-color: var(--tnl-fg);
 }
@@ -624,7 +683,9 @@
 [data-md-color-scheme="tokyo-night-light"] .md-typeset .keys kbd {
   background: var(--tnl-surface-2);
   color: var(--tnl-fg);
-  box-shadow: 0 0 0 .05rem var(--tnl-border), 0 .15rem 0 var(--tnl-border);
+  box-shadow:
+    0 0 0 0.05rem var(--tnl-border),
+    0 0.15rem 0 var(--tnl-border);
 }
 
 /* =========================================================
@@ -674,7 +735,9 @@
    Transitions for smooth theme switching
    ========================================================= */
 [data-md-color-scheme="tokyo-night-light"] body {
-  transition: background-color 0.25s, color 0.25s;
+  transition:
+    background-color 0.25s,
+    color 0.25s;
 }
 
 /* =========================================================
@@ -691,13 +754,13 @@
   --tnd-bg-highlight: #292e42;
   --tnd-bg-popup: #16161e;
   --tnd-bg-visual: #283457;
-  
+
   /* Foreground */
   --tnd-fg: #c0caf5;
   --tnd-fg-dark: #a9b1d6;
   --tnd-fg-muted: #565f89;
   --tnd-fg-gutter: #3b4261;
-  
+
   /* Accent colors */
   --tnd-red: #f7768e;
   --tnd-orange: #ff9e64;
@@ -710,12 +773,12 @@
   --tnd-blue: #7aa2f7;
   --tnd-violet: #bb9af7;
   --tnd-purple: #9d7cd8;
-  
+
   /* Surface/sidebar */
   --tnd-surface: #414868;
   --tnd-surface-2: #2a2f4a;
   --tnd-border: #565f89;
-  
+
   /* Material theme variable overrides */
   --md-default-bg-color: var(--tnd-bg);
   --md-default-bg-color--light: color-mix(in srgb, var(--tnd-bg) 85%, white);
@@ -729,16 +792,32 @@
   --md-primary-fg-color--light: var(--tnd-fg-dark);
   --md-primary-fg-color--dark: var(--tnd-soft);
   --md-primary-bg-color: var(--tnd-surface);
-  --md-primary-bg-color--light: color-mix(in srgb, var(--tnd-surface) 70%, transparent);
+  --md-primary-bg-color--light: color-mix(
+    in srgb,
+    var(--tnd-surface) 70%,
+    transparent
+  );
   --md-accent-fg-color: var(--tnd-cyan);
-  --md-accent-fg-color--transparent: color-mix(in srgb, var(--tnd-cyan) 16%, transparent);
+  --md-accent-fg-color--transparent: color-mix(
+    in srgb,
+    var(--tnd-cyan) 16%,
+    transparent
+  );
   --md-accent-bg-color: var(--tnd-surface);
   --md-code-bg-color: var(--tnd-surface);
   --md-code-fg-color: var(--tnd-fg);
   --md-typeset-color: var(--tnd-fg);
   --md-typeset-a-color: var(--tnd-blue);
-  --md-typeset-mark-color: color-mix(in srgb, var(--tnd-amber) 35%, transparent);
-  --md-typeset-table-color: color-mix(in srgb, var(--tnd-border) 45%, transparent);
+  --md-typeset-mark-color: color-mix(
+    in srgb,
+    var(--tnd-amber) 35%,
+    transparent
+  );
+  --md-typeset-table-color: color-mix(
+    in srgb,
+    var(--tnd-border) 45%,
+    transparent
+  );
   --md-typeset-kbd-color: var(--tnd-surface-2);
   --md-typeset-kbd-border-color: var(--tnd-border);
   --md-admonition-bg-color: var(--tnd-surface);
@@ -748,9 +827,12 @@
   --md-footer-fg-color: var(--tnd-fg);
   --md-warning-fg-color: var(--tnd-bg);
   --md-warning-bg-color: var(--tnd-amber);
-  --md-shadow-z1: 0 0.2rem 0.5rem rgba(0,0,0,.18), 0 0 0.05rem rgba(255,255,255,.08);
-  --md-shadow-z2: 0 0.2rem 0.5rem rgba(0,0,0,.35), 0 0 0.05rem rgba(255,255,255,.16);
-  --md-shadow-z3: 0 0.5rem 2rem rgba(0,0,0,.40), 0 0 0.05rem rgba(0,0,0,.20);
+  --md-shadow-z1:
+    0 0.2rem 0.5rem rgba(0, 0, 0, 0.18), 0 0 0.05rem rgba(255, 255, 255, 0.08);
+  --md-shadow-z2:
+    0 0.2rem 0.5rem rgba(0, 0, 0, 0.35), 0 0 0.05rem rgba(255, 255, 255, 0.16);
+  --md-shadow-z3:
+    0 0.5rem 2rem rgba(0, 0, 0, 0.4), 0 0 0.05rem rgba(0, 0, 0, 0.2);
 
   color: var(--tnd-fg-dark);
   background-color: var(--tnd-bg);
@@ -836,7 +918,9 @@
 
 [data-md-color-scheme="tokyo-night-dark"] .md-sidebar--secondary,
 [data-md-color-scheme="tokyo-night-dark"] .md-sidebar--secondary .md-nav,
-[data-md-color-scheme="tokyo-night-dark"] .md-sidebar--secondary .md-nav__title {
+[data-md-color-scheme="tokyo-night-dark"]
+  .md-sidebar--secondary
+  .md-nav__title {
   background: var(--tnd-bg);
   color: var(--tnd-fg);
 }
@@ -860,7 +944,9 @@
 }
 
 [data-md-color-scheme="tokyo-night-dark"] .md-nav__link--active,
-[data-md-color-scheme="tokyo-night-dark"] .md-nav__item--active > .md-nav__link {
+[data-md-color-scheme="tokyo-night-dark"]
+  .md-nav__item--active
+  > .md-nav__link {
   background: var(--tnd-bg);
   color: var(--tnd-fg);
   box-shadow: inset 3px 0 0 var(--tnd-sky);
@@ -868,8 +954,13 @@
   padding-left: 6px;
 }
 
-[data-md-color-scheme="tokyo-night-dark"] .md-nav--secondary .md-nav__link--active,
-[data-md-color-scheme="tokyo-night-dark"] .md-nav--secondary .md-nav__item--active > .md-nav__link {
+[data-md-color-scheme="tokyo-night-dark"]
+  .md-nav--secondary
+  .md-nav__link--active,
+[data-md-color-scheme="tokyo-night-dark"]
+  .md-nav--secondary
+  .md-nav__item--active
+  > .md-nav__link {
   border-left: 3px solid var(--tnd-sky);
   box-shadow: none;
 }
@@ -1024,9 +1115,17 @@
   border-color: var(--tnd-border);
 }
 
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset table:not([class]) tbody tr:hover {
-  background-color: color-mix(in srgb, var(--tnd-bg-highlight) 50%, transparent);
-  box-shadow: 0 .05rem 0 var(--tnd-bg) inset;
+[data-md-color-scheme="tokyo-night-dark"]
+  .md-typeset
+  table:not([class])
+  tbody
+  tr:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--tnd-bg-highlight) 50%,
+    transparent
+  );
+  box-shadow: 0 0.05rem 0 var(--tnd-bg) inset;
 }
 
 /* =========================================================
@@ -1166,7 +1265,9 @@
 }
 
 [data-md-color-scheme="tokyo-night-dark"] .md-annotation__index:hover:after,
-[data-md-color-scheme="tokyo-night-dark"] .md-tooltip--active + .md-annotation__index:after {
+[data-md-color-scheme="tokyo-night-dark"]
+  .md-tooltip--active
+  + .md-annotation__index:after {
   background-color: var(--tnd-cyan);
 }
 
@@ -1193,7 +1294,10 @@
 /* =========================================================
    Task Lists
    ========================================================= */
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset [type=checkbox]:checked + .task-list-indicator:before {
+[data-md-color-scheme="tokyo-night-dark"]
+  .md-typeset
+  [type="checkbox"]:checked
+  + .task-list-indicator:before {
   background-color: var(--tnd-green);
 }
 
@@ -1241,18 +1345,24 @@
    Tabbed Sets
    ========================================================= */
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset .tabbed-labels {
-  box-shadow: 0 -.05rem 0 inset var(--tnd-border);
+  box-shadow: 0 -0.05rem 0 inset var(--tnd-border);
 }
 
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset .tabbed-labels > label {
   color: var(--tnd-fg-muted);
 }
 
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .tabbed-labels > label:hover {
+[data-md-color-scheme="tokyo-night-dark"]
+  .md-typeset
+  .tabbed-labels
+  > label:hover {
   color: var(--tnd-fg);
 }
 
-[data-md-color-scheme="tokyo-night-dark"] .md-typeset .tabbed-labels > label[aria-selected=true] {
+[data-md-color-scheme="tokyo-night-dark"]
+  .md-typeset
+  .tabbed-labels
+  > label[aria-selected="true"] {
   color: var(--tnd-fg);
   border-color: var(--tnd-fg);
 }
@@ -1301,7 +1411,9 @@
 [data-md-color-scheme="tokyo-night-dark"] .md-typeset .keys kbd {
   background: var(--tnd-surface-2);
   color: var(--tnd-fg);
-  box-shadow: 0 0 0 .05rem var(--tnd-border), 0 .15rem 0 var(--tnd-border);
+  box-shadow:
+    0 0 0 0.05rem var(--tnd-border),
+    0 0.15rem 0 var(--tnd-border);
 }
 
 /* =========================================================
@@ -1351,7 +1463,9 @@
    Transitions for smooth theme switching
    ========================================================= */
 [data-md-color-scheme="tokyo-night-dark"] body {
-  transition: background-color 0.25s, color 0.25s;
+  transition:
+    background-color 0.25s,
+    color 0.25s;
 }
 
 /* =========================================================
@@ -1368,13 +1482,13 @@
   --tns-bg-highlight: #292e42;
   --tns-bg-popup: #1f2335;
   --tns-bg-visual: #2e3c64;
-  
+
   /* Foreground */
   --tns-fg: #c0caf5;
   --tns-fg-dark: #a9b1d6;
   --tns-fg-muted: #565f89;
   --tns-fg-gutter: #3b4261;
-  
+
   /* Accent colors */
   --tns-red: #f7768e;
   --tns-orange: #ff9e64;
@@ -1387,68 +1501,95 @@
   --tns-blue: #7aa2f7;
   --tns-violet: #bb9af7;
   --tns-purple: #9d7cd8;
-  
+
   /* Surface/sidebar */
   --tns-surface: #414868;
   --tns-surface-2: #2a2f4a;
   --tns-border: #565f89;
-  
+
   /* Material theme variable overrides */
   --md-default-bg-color: var(--tns-bg);
   --md-default-bg-color--light: color-mix(in srgb, var(--tns-bg) 85%, white);
   --md-default-bg-color--lighter: color-mix(in srgb, var(--tns-bg) 70%, white);
   --md-default-bg-color--lightest: color-mix(in srgb, var(--tns-bg) 55%, white);
-  
+
   --md-default-fg-color: var(--tns-fg);
   --md-default-fg-color--light: var(--tns-fg-dark);
   --md-default-fg-color--lighter: var(--tns-fg-muted);
   --md-default-fg-color--lightest: var(--tns-border);
-  
+
   --md-primary-fg-color: var(--tns-fg);
   --md-primary-fg-color--light: var(--tns-fg-dark);
   --md-primary-fg-color--dark: var(--tns-fg);
   --md-primary-bg-color: var(--tns-surface);
-  --md-primary-bg-color--light: color-mix(in srgb, var(--tns-surface) 70%, transparent);
-  
+  --md-primary-bg-color--light: color-mix(
+    in srgb,
+    var(--tns-surface) 70%,
+    transparent
+  );
+
   --md-accent-fg-color: var(--tns-cyan);
-  --md-accent-fg-color--transparent: color-mix(in srgb, var(--tns-cyan) 16%, transparent);
+  --md-accent-fg-color--transparent: color-mix(
+    in srgb,
+    var(--tns-cyan) 16%,
+    transparent
+  );
   --md-accent-bg-color: var(--tns-surface);
-  
+
   --md-code-bg-color: var(--tns-surface);
   --md-code-fg-color: var(--tns-fg);
-  
+
   --md-typeset-color: var(--tns-fg);
   --md-typeset-a-color: var(--tns-blue);
   --md-typeset-del-color: color-mix(in srgb, var(--tns-red) 20%, transparent);
   --md-typeset-ins-color: color-mix(in srgb, var(--tns-green) 20%, transparent);
-  --md-typeset-mark-color: color-mix(in srgb, var(--tns-amber) 35%, transparent);
-  --md-typeset-table-color: color-mix(in srgb, var(--tns-border) 45%, transparent);
-  --md-typeset-table-color--light: color-mix(in srgb, var(--tns-border) 20%, transparent);
-  
+  --md-typeset-mark-color: color-mix(
+    in srgb,
+    var(--tns-amber) 35%,
+    transparent
+  );
+  --md-typeset-table-color: color-mix(
+    in srgb,
+    var(--tns-border) 45%,
+    transparent
+  );
+  --md-typeset-table-color--light: color-mix(
+    in srgb,
+    var(--tns-border) 20%,
+    transparent
+  );
+
   --md-typeset-kbd-color: var(--tns-surface-2);
   --md-typeset-kbd-border-color: var(--tns-border);
-  
+
   --md-admonition-bg-color: var(--tns-surface);
   --md-admonition-fg-color: var(--tns-fg);
-  
+
   --md-footer-bg-color: var(--tns-surface);
   --md-footer-bg-color--dark: var(--tns-bg);
   --md-footer-fg-color: var(--tns-fg);
-  
+
   --md-warning-fg-color: var(--tns-bg);
   --md-warning-bg-color: var(--tns-amber);
-  
-  --md-shadow-z1: 0 0.2rem 0.5rem rgba(0,0,0,.18), 0 0 0.05rem rgba(255,255,255,.08);
-  --md-shadow-z2: 0 0.2rem 0.5rem rgba(0,0,0,.35), 0 0 0.05rem rgba(255,255,255,.16);
-  --md-shadow-z3: 0 0.5rem 2rem rgba(0,0,0,.40), 0 0 0.05rem rgba(0,0,0,.20);
-  
+
+  --md-shadow-z1:
+    0 0.2rem 0.5rem rgba(0, 0, 0, 0.18), 0 0 0.05rem rgba(255, 255, 255, 0.08);
+  --md-shadow-z2:
+    0 0.2rem 0.5rem rgba(0, 0, 0, 0.35), 0 0 0.05rem rgba(255, 255, 255, 0.16);
+  --md-shadow-z3:
+    0 0.5rem 2rem rgba(0, 0, 0, 0.4), 0 0 0.05rem rgba(0, 0, 0, 0.2);
+
   /* Mermaid diagrams */
-  --md-mermaid-node-bg-color: color-mix(in srgb, var(--tns-blue) 20%, transparent);
+  --md-mermaid-node-bg-color: color-mix(
+    in srgb,
+    var(--tns-blue) 20%,
+    transparent
+  );
   --md-mermaid-node-fg-color: var(--tns-blue);
   --md-mermaid-edge-color: var(--tns-fg-dark);
   --md-mermaid-label-bg-color: var(--tns-surface);
   --md-mermaid-label-fg-color: var(--tns-fg);
-  
+
   color: var(--tns-fg-dark);
   background-color: var(--tns-bg);
   color-scheme: dark;
@@ -1533,7 +1674,9 @@
 
 [data-md-color-scheme="tokyo-night-storm"] .md-sidebar--secondary,
 [data-md-color-scheme="tokyo-night-storm"] .md-sidebar--secondary .md-nav,
-[data-md-color-scheme="tokyo-night-storm"] .md-sidebar--secondary .md-nav__title {
+[data-md-color-scheme="tokyo-night-storm"]
+  .md-sidebar--secondary
+  .md-nav__title {
   background: var(--tns-bg);
   color: var(--tns-fg);
 }
@@ -1557,7 +1700,9 @@
 }
 
 [data-md-color-scheme="tokyo-night-storm"] .md-nav__link--active,
-[data-md-color-scheme="tokyo-night-storm"] .md-nav__item--active > .md-nav__link {
+[data-md-color-scheme="tokyo-night-storm"]
+  .md-nav__item--active
+  > .md-nav__link {
   background: var(--tns-bg);
   color: var(--tns-fg);
   box-shadow: inset 3px 0 0 var(--tns-sky);
@@ -1565,8 +1710,13 @@
   padding-left: 6px;
 }
 
-[data-md-color-scheme="tokyo-night-storm"] .md-nav--secondary .md-nav__link--active,
-[data-md-color-scheme="tokyo-night-storm"] .md-nav--secondary .md-nav__item--active > .md-nav__link {
+[data-md-color-scheme="tokyo-night-storm"]
+  .md-nav--secondary
+  .md-nav__link--active,
+[data-md-color-scheme="tokyo-night-storm"]
+  .md-nav--secondary
+  .md-nav__item--active
+  > .md-nav__link {
   border-left: 3px solid var(--tns-sky);
   box-shadow: none;
 }
@@ -1721,9 +1871,17 @@
   border-color: var(--tns-border);
 }
 
-[data-md-color-scheme="tokyo-night-storm"] .md-typeset table:not([class]) tbody tr:hover {
-  background-color: color-mix(in srgb, var(--tns-bg-highlight) 50%, transparent);
-  box-shadow: 0 .05rem 0 var(--tns-bg) inset;
+[data-md-color-scheme="tokyo-night-storm"]
+  .md-typeset
+  table:not([class])
+  tbody
+  tr:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--tns-bg-highlight) 50%,
+    transparent
+  );
+  box-shadow: 0 0.05rem 0 var(--tns-bg) inset;
 }
 
 /* =========================================================
@@ -1863,7 +2021,9 @@
 }
 
 [data-md-color-scheme="tokyo-night-storm"] .md-annotation__index:hover:after,
-[data-md-color-scheme="tokyo-night-storm"] .md-tooltip--active + .md-annotation__index:after {
+[data-md-color-scheme="tokyo-night-storm"]
+  .md-tooltip--active
+  + .md-annotation__index:after {
   background-color: var(--tns-cyan);
 }
 
@@ -1890,7 +2050,10 @@
 /* =========================================================
    Task Lists
    ========================================================= */
-[data-md-color-scheme="tokyo-night-storm"] .md-typeset [type=checkbox]:checked + .task-list-indicator:before {
+[data-md-color-scheme="tokyo-night-storm"]
+  .md-typeset
+  [type="checkbox"]:checked
+  + .task-list-indicator:before {
   background-color: var(--tns-green);
 }
 
@@ -1938,18 +2101,24 @@
    Tabbed Sets
    ========================================================= */
 [data-md-color-scheme="tokyo-night-storm"] .md-typeset .tabbed-labels {
-  box-shadow: 0 -.05rem 0 inset var(--tns-border);
+  box-shadow: 0 -0.05rem 0 inset var(--tns-border);
 }
 
 [data-md-color-scheme="tokyo-night-storm"] .md-typeset .tabbed-labels > label {
   color: var(--tns-fg-muted);
 }
 
-[data-md-color-scheme="tokyo-night-storm"] .md-typeset .tabbed-labels > label:hover {
+[data-md-color-scheme="tokyo-night-storm"]
+  .md-typeset
+  .tabbed-labels
+  > label:hover {
   color: var(--tns-fg);
 }
 
-[data-md-color-scheme="tokyo-night-storm"] .md-typeset .tabbed-labels > label[aria-selected=true] {
+[data-md-color-scheme="tokyo-night-storm"]
+  .md-typeset
+  .tabbed-labels
+  > label[aria-selected="true"] {
   color: var(--tns-fg);
   border-color: var(--tns-fg);
 }
@@ -1998,7 +2167,9 @@
 [data-md-color-scheme="tokyo-night-storm"] .md-typeset .keys kbd {
   background: var(--tns-surface-2);
   color: var(--tns-fg);
-  box-shadow: 0 0 0 .05rem var(--tns-border), 0 .15rem 0 var(--tns-border);
+  box-shadow:
+    0 0 0 0.05rem var(--tns-border),
+    0 0.15rem 0 var(--tns-border);
 }
 
 /* =========================================================
@@ -2048,5 +2219,7 @@
    Transitions for smooth theme switching
    ========================================================= */
 [data-md-color-scheme="tokyo-night-storm"] body {
-  transition: background-color 0.25s, color 0.25s;
+  transition:
+    background-color 0.25s,
+    color 0.25s;
 }

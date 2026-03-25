@@ -1,7 +1,7 @@
 # Notes
 
 !!! info "Placeholder"
-    This section is under development. Pages listed below are placeholders for future content.
+This section is under development. Pages listed below are placeholders for future content.
 
 This section will contain study notes and reference material organized by topic:
 

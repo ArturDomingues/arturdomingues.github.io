@@ -6,16 +6,16 @@ Personal academic website for Artur Domingues, a physicist specializing in quant
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Static site generator | [Zensical](https://zensical.org) (MkDocs-compatible) |
-| Language | Python 3.12 (local via `.python-version`) / 3.x latest (CI) |
-| Package manager | [uv](https://github.com/astral-sh/uv) (local) / pip (CI) |
-| Theme | Material for MkDocs with custom Tokyo Night CSS palette |
-| Math rendering | MathJax 3 (CDN: `unpkg.com/mathjax@3`) |
-| Markdown extensions | PyMdown Extensions (superfences, arithmatex, highlight, emoji, etc.) |
-| Hosting | GitHub Pages |
-| CI/CD | GitHub Actions (`.github/workflows/docs.yml`) |
+| Layer                 | Technology                                                           |
+| --------------------- | -------------------------------------------------------------------- |
+| Static site generator | [Zensical](https://zensical.org) (MkDocs-compatible)                 |
+| Language              | Python 3.12 (local via `.python-version`) / 3.x latest (CI)          |
+| Package manager       | [uv](https://github.com/astral-sh/uv) (local) / pip (CI)             |
+| Theme                 | Material for MkDocs with custom Tokyo Night CSS palette              |
+| Math rendering        | MathJax 3 (CDN: `unpkg.com/mathjax@3`)                               |
+| Markdown extensions   | PyMdown Extensions (superfences, arithmatex, highlight, emoji, etc.) |
+| Hosting               | GitHub Pages                                                         |
+| CI/CD                 | GitHub Actions (`.github/workflows/docs.yml`)                        |
 
 ## Directory Map
 

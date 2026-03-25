@@ -1,7 +1,7 @@
 # :material-laptop: Computational Notes
 
 !!! info "Placeholder"
-    This page is a placeholder. Computational notes will be added here over time.
+This page is a placeholder. Computational notes will be added here over time.
 
 Planned topics:
 
